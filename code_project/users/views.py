@@ -1,10 +1,11 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LogoutView
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.shortcuts import render
 from django.contrib import messages
 from django.views import View
+from django.views.generic import ListView
 
 from users.forms import UserRegisterForm, LoginForm
 
@@ -43,9 +44,11 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
-# nie mogę zmienić aby pojawiał się taki sam komunikat jak w przypadku logowania, zielony alert!
-# class LogoutView2(LogoutView, View):
-#
-#     def logout(self, request):
-#         messages.success(request, f'Użytkownik został wylogowany!')
-#         return render(request, 'users/logout.html')
+
+class ProfileView(View):
+    def get(self, request, id):
+        profile = get_object_or_404(User, id=id)
+        return render(request, 'users/profile.html', {'profile': profile})
+
+
+

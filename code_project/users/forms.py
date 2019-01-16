@@ -11,7 +11,6 @@ class UserRegisterForm(UserCreationForm):
     password1 = forms.CharField(widget=forms.PasswordInput(), label='Hasło:')
     password2 = forms.CharField(widget=forms.PasswordInput(), label='Powtórz hasło:')
 
-
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
@@ -24,4 +23,12 @@ class LoginForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['email', 'password']
+
+
+# class UserUpdateForm(forms.ModelForm):
+#     email = forms.EmailField()
+#
+#     class Meta:
+#         model = User
+#         fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
 

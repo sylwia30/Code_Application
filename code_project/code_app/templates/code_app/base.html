@@ -22,13 +22,13 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="/">Home</a>
-              <a class="nav-item nav-link" href="/about">About</a>
+              <a class="nav-item nav-link" href="#">Blog</a>
             </div>
             <!-- Navbar Right Side -->
 
             <div class="navbar-nav">
                 {% if user.is_authenticated %}
-                    <a class="nav-item nav-link" href="#">{{ user.username }}</a>
+                    <a class="nav-item nav-link" href="{% url 'profile' user.id %}">{{ user.username }}</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Wyjoguj</a>
 {#                  <a class="nav-item nav-link" href="{% url 'profil' %}">Profil</a>#}
                 {% else %}
