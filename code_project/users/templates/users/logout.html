@@ -1,0 +1,21 @@
+{% extends 'code_app/base.html' %}
+
+    {% if messages  %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+{% block content %}
+
+
+
+    <h2 class="alert alert-info">Użytkownik został wylogowany!</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Zaloguj się ponownie...</a>
+        </small>
+    </div>
+{% endblock content %}
