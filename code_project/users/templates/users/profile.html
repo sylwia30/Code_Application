@@ -1,8 +1,56 @@
 {% extends 'code_app/base.html' %}
-{#{% load crispy_forms_tags %}#}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<p>Imię:</p>
-{{ profile.username }}
+{#    <div class="content-section">#}
+{#      <div class="media">#}
+{#        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">#}
+{#        <div class="media-body">#}
+{#          <h2 class="account-heading">{{ profile.first_name }} {{ profile.last_name }}</h2>#}
+{#          <h4>{{ profile.username }}</h4>#}
+{#          <p class="text-secondary">{{ profile.email }}</p>#}
+{#        </div>#}
+{#      </div>#}
+{#      <form method="POST" enctype="multipart/form-data">#}
+{#              enctype="multipart/form-data" to jest ważne żeby umieśćić, formularz się zapisze ale mogą być buggi i ciężko jest rozpoznać#}
+{#              bez tego gdzie znajduje się błąd#}
+{#            <fieldset class="form-group">#}
+{#                <legend class="border-bottom mb-4">Profile info</legend>#}
+{#                {{ user_form|crispy }}#}
+{#                <p class="form-group">Imię: {{ profile.first_name }}</p>#}
+{#                {{ profile.last_name }}#}
+{#                {{ profile.username }}#}
+{#                {{ profile.email }}#}
+{#            </fieldset>#}
+{#            <div class="form-group">#}
+{#                <button class="btn btn-outline-info" type="submit">Edytuj dane</button>#}
+{#                <a class="btn btn-outline-info" href="#">Zmień hasło</a>#}
+{#                <a class="btn btn-outline-danger" href="#">Skasuj konto</a>#}
+{#            </div>#}
+{#        </form>#}
+{#</div>#}
 
+    <article class="media content-section">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <h2 class="account-heading">{{ profile.first_name }} {{ profile.last_name }}</h2>
+            </div>
+        </div>
+     </article>
+     <article class="media content-section">
+        <div>
+         <h4 class="article-title">Dane osobowe:</h4>
+         <h6 class="article-content">Imię: {{ profile.first_name  }}</h6>
+         <h6 class="article-content">Nazwisko: {{ profile.last_name  }}</h6>
+         <h6 class="article-content">Nick: {{ profile.username  }}</h6>
+         <h6 class="article-content">E-mail: {{ profile.email  }}</h6>
+        </div>
+
+    </article>
+            <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Edytuj dane</button>
+        <a class="btn btn-outline-info" href="#">Zmień hasło</a>
+        <a class="btn btn-outline-danger" href="#">Skasuj konto</a>
+        </div>
 {% endblock content %}
