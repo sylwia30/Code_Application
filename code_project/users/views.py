@@ -8,6 +8,7 @@ from django.views import View
 from django.views.generic import ListView
 
 from users.forms import UserRegisterForm, LoginForm
+from users.models import Profile
 
 
 class LoginUserView(View):
@@ -49,6 +50,8 @@ class ProfileView(View):
     def get(self, request, id):
         profile = get_object_or_404(User, id=id)
         return render(request, 'users/profile.html', {'profile': profile})
+
+
 
 
 
