@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'code_app.apps.CodeAppConfig',  # dodanie aplikacji
     'users.apps.UsersConfig',   # dodanie aplikacji
+    'chat.apps.ChatConfig', # dodanie aplikacji
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
