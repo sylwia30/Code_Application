@@ -12,7 +12,7 @@
      </article>
      <article class="media content-section">
         <div>
-         <h4 class="article-title">Dane osobowe:</h4>
+         <h4 class="border-bottom mb-4">Dane osobowe:</h4>
          <h6 class="article-content">Imię: {{ profile.first_name  }}</h6>
          <h6 class="article-content">Nazwisko: {{ profile.last_name  }}</h6>
          <h6 class="article-content">Nick: {{ profile.username  }}</h6>
@@ -21,8 +21,10 @@
 
     </article>
             <div class="form-group">
-        <button class="btn btn-outline-info" type="submit">Edytuj dane</button>
+        <a class="btn btn-outline-info" href="{% url 'profile-edit' %}">Edytuj dane</a>
         <a class="btn btn-outline-info" href="#">Zmień hasło</a>
-        <a class="btn btn-outline-danger" href="#">Skasuj konto</a>
+        <a class="btn btn-outline-danger" href="{% url 'user-delete' user.id %}">Skasuj konto</a>
         </div>
 {% endblock content %}
+
+

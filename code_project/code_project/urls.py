@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from code_app.views import base
-from users.views import LoginUserView, register, ProfileView
+from users.views import LoginUserView, register, ProfileView, profile, UserDeleteForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +27,14 @@ urlpatterns = [
     path('login/', LoginUserView.as_view(), name='login'),
     path('logout', LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('register/', register, name='register'),
-    path('profile/<int:id>', ProfileView.as_view(), name='profile'),
+    path('profile/', ProfileView.as_view(), name='profile'),
+    path('profile/edit/', profile, name='profile-edit'),
+    path('profile/<int:pk>/delete/', UserDeleteForm.as_view(template_name='users/user_confirm_delete.html'),
+         name='user-delete'),
 
 ]
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    """ to pozwala na wyświetlenie obrazka w profilu """
