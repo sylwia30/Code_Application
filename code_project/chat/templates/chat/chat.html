@@ -2,7 +2,7 @@
 {#{% load extras %}#}
 {% load crispy_forms_tags %}
 {% block content %}
-    <h4 class="border-bottom mb-4">Blog:</h4>
+    <h4 class="border-bottom mb-4">Czat:</h4>
     <div class="form-group">
     <a class="btn btn-outline-info" href="{% url 'post-create' %}">Dodaj wątek</a>
     </div>
@@ -15,7 +15,7 @@
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 </div>
                 <div><br>
-                <h6 class="article-title"><b>{{ post.title }}</b></h6>
+                <a class="article-title" href="{% url 'post-detail' post.pk %}"><b>{{ post.title }}</b></a>
                 <p class="article-content">{{ post.content }}</p>
                 </div>
 {#                <div>#}

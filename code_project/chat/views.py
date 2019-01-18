@@ -74,8 +74,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content']
-    template_name_suffix = '_update_form'
-    success_url = reverse_lazy('user-post')
+    template_name = 'chat/post_update_form.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
