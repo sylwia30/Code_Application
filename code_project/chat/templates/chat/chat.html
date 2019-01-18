@@ -4,17 +4,17 @@
 {% block content %}
     <h4 class="border-bottom mb-4">Blog:</h4>
     <div class="form-group">
-    <a class="btn btn-outline-info" href="#">Dodaj wątek</a>
+    <a class="btn btn-outline-info" href="{% url 'post-create' %}">Dodaj wątek</a>
     </div>
     {% for post in posts %}
         <article class="media content-section">
             <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2 btn-outline-info" href="#">{{ post.author }}</a>
+                    <a class="mr-2 btn-outline-info" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
                     <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 </div>
-                <div class="article-metadata"><br>
+                <div><br>
                 <h6 class="article-title"><b>{{ post.title }}</b></h6>
                 <p class="article-content">{{ post.content }}</p>
                 </div>
@@ -27,7 +27,7 @@
 {#                        <button class="btn btn-outline-info" type="submit">Zapisz</button>#}
 {#                    </form>#}
 {#                    {% if post.comment_set.all %}#}
-                        <small class="text-muted">Comments: ({{ post.comment_set.all.count }})</small><br>
+
 {#                        {% for comment in post%}#}
 {#                       <small class="text-muted">{{ comment.user.username }}: </small>{{ comment.text|truncatechars:10 }}<br>#}
 {#                    {% endfor %}#}
@@ -36,12 +36,13 @@
 {#                    {% endif %}#}
 {#                </div>#}
             </div>
+         <small class="text-muted">Komentarze: ({{ post.comment_set.all.count }})</small><br>
         </article>
     {% endfor %}
     {% if is_paginated %}
         {% if page_obj.has_previous %}
-            <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            <a class="btn btn-outline-info mb-4" href="?page=1">Pierwsza</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Poprzednia</a>
         {% endif %}
         {% for num in page_obj.paginator.page_range %}
             {% if page_obj.number == num %}
@@ -51,8 +52,8 @@
             {% endif %}
         {% endfor %}
         {% if page_obj.has_next %}
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Następna</a>
+            <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Ostatnia</a>
         {% endif %}
     {% endif %}
 {% endblock content %}

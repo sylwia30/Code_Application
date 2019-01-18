@@ -5,8 +5,8 @@ from django.db import models
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    content = models.TextField()
+    title = models.CharField(max_length=100, verbose_name="Tytuł:")
+    content = models.TextField(verbose_name="Treść:")
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -15,9 +15,9 @@ class Post(models.Model):
 
     # """jak zapisujemy nowy post piszemy poniższą funkcję aby przeniosła nas do
     # post-detail do nowo utworzonego postu"""
-    #
-    # def get_absolute_url(self):
-    #     return reverse('post-detail', kwargs={'pk':self.pk})
+
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk':self.pk})
 
 class Comment(models.Model):
     text = models.CharField(max_length=200)
