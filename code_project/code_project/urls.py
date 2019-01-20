@@ -18,13 +18,12 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from code_app.views import base
 from users.views import LoginUserView, register, ProfileView, profile, UserDeleteForm
+from code_app.views import base, start_code
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('chat.urls')),
-    path('', base, name='base'),
     path('login/', LoginUserView.as_view(), name='login'),
     path('logout', LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('register/', register, name='register'),
@@ -32,6 +31,8 @@ urlpatterns = [
     path('profile/edit/', profile, name='profile-edit'),
     path('profile/<int:pk>/delete/', UserDeleteForm.as_view(template_name='users/user_confirm_delete.html'),
          name='user-delete'),
+    path('', base, name='base'),
+    path('start_code/', start_code, name="start-code"),
 
 ]
 
