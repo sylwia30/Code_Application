@@ -135,3 +135,4 @@ MEDIA_URL = '/media/' # utworzenie folderu z plikami jpg, zdjeciami profilowymi
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'base' # po zalogowaniu przekierowuje nas do strony głównej base
+
