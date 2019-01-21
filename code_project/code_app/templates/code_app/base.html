@@ -42,58 +42,56 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
-            {% if messages  %}
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
+          {% if messages  %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
-          {% block content %}
-              <div class="container">
-                  <div class="content-section"> {# biała ramka dookoła #}
-                      <div class="row">
-                          <div class="col-md-8">
-              <h2>Zostań programisą Pythona!</h2><br>
-            <h5>Poznaj jeden z najpopularniejszych języków programowania. Sam sprawdź prostotę i logikę tego języka.</h5>
-            <p></p>
-{#            <h5>Python to łatwy do opanowania, potężny język programowania. Ma wydajne struktury danych wysokiego#}
-{#                poziomu i proste, ale skuteczne podejście do programowania obiektowego. Łatwa składnia i dynamiczne#}
-{#                pisanie w Pythonie wraz z jego zinterpretowaną naturą sprawiają, że jest to idealny język do pisania#}
-{#                skryptów i szybkiego tworzenia aplikacji w wielu obszarach na większości platform.#}
-{#            </h5>#}
-            <h5>Podczas kursu nauczysz się zarówno postaw jak i zaawansowanych technik programowania w Pythonie. Dzięki
-                platformie interaktywnej będziesz rozwiązywał setki zadań i testów, korzystając przy tym z obszernych
-                materiałów naukowych.
-            </h5>
-              <h5><strong>Zastanawiasz się czy ten kurs jest włąśnie dla Ciebie?</strong>
+        {% block content %}
+          <div class="container">
+            <div class="content-section"> {# biała ramka dookoła #}
+              <h2 class="text-center">
+                  Zostań programisą Pythona!
+              </h2><br>
+              <h5 class="text-center">
+                  Poznaj jeden z najpopularniejszych języków programowania. Sam sprawdź prostotę i logikę tego języka!
               </h5>
               <p></p>
-              <img src="media/profile_pics/cro_code_line.jpg" title="Photo corCode_Line" alt="Crocodile" width="700" height="300"/>
-              <p></p>
-            <h5>Program nauczania zawiera wszystkie dostępne biblioteki standardowe Python.
-                Na naszym portalu możesz utrwalać swoją wiedzę, rozwiązując zadania na ogólnodostępnej
-                platformie wymieniając się doświadczniem z innymi pasjonatami programowania na czacie.
-            </h5>
-            <h5>W ramach kursu poznasz rownież inne techniki programowania, w tym:
-                <ul>
-                    <li>Python</li>
-                    <li>HTML5</li>
-                    <li>CSS</li>
-                    <li>Java Script</li>
-                    <li>JQuery</li>
-                </ul>
-            </h5>
-            <h5>
-                <a class="btn-outline-info" href="{% url 'start-code' %}">Sprawdź program nauczania i wybierz najbardziej odpowiednią ścieżkę dla siebie...</a>
-            </h5>
-                </div>
-                </div>
-                  </div>
-              </div>
-          {% endblock %}
+              <h6 class="text-center">
+                  Podczas kursu nauczysz się zarówno postaw jak i zaawansowanych technik programowania w Pythonie. Dzięki
+                  platformie interaktywnej będziesz rozwiązywał setki zadań i testów, korzystając przy tym z obszernych
+                  materiałów naukowych.
+              </h6>
+              <h6 class="text-center">
+                  Zastanawiasz się czy ten kurs jest właśnie dla Ciebie?
+              </h6>
+                <p></p>
+                    <img class="img-fluid" src="media/profile_pics/cro_code_line.jpg" title="Photo corCode_Line" alt="Crocodile"/>
+                <p></p>
+{#                <h6 class="text-center">#}
+{#                    Program nauczania zawiera wszystkie dostępne biblioteki standardowe Python.#}
+{#                    Na naszym portalu możesz utrwalać swoją wiedzę, rozwiązując zadania na ogólnodostępnej#}
+{#                    platformie wymieniając się doświadczniem z innymi pasjonatami programowania na czacie.#}
+{#                </h6>#}
+                <h6>
+                  <a class="nav-item nav-link btn-outline-info text-center" href="{% url 'start-code' %}">Sprawdź program nauczania i wybierz najbardziej odpowiednią ścieżkę dla siebie...</a>
+                </h6>
+{#                <h6>W ramach kursu poznasz rownież inne techniki programowania, w tym:#}
+{#                  <ul>#}
+{#                    <li>Python</li>#}
+{#                    <li>HTML5</li>#}
+{#                    <li>CSS</li>#}
+{#                    <li>Java Script</li>#}
+{#                    <li>JQuery</li>#}
+{#                  </ul>#}
+{#                </h6>#}
+            </div>
+          </div>
+        {% endblock %}
 
 {#        <div class="col-md-4">#}
 {#          <div class="content-section">#}
