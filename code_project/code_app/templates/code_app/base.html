@@ -5,17 +5,36 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="icon" href="../../../../favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'code_app/main.css' %}">
-    <title>Codding</title>
+
+      <title>Codding</title>
   </head>
   <body>
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">croCode Line</a>
+          <a class="navbar-brand mr-5" href="/">croCode Line</a>
+        <div class="navbar-nav">
+{#            <a class="nav-item nav-link" href="{% url 'courses' %}">Kursy</a>#}
+            <ul>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle mr-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
+                  <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
+                  <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
+                  <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
+                  <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
+                </div>
+              </li>
+            </ul>
+        </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -78,7 +97,7 @@
 {#                    platformie wymieniając się doświadczniem z innymi pasjonatami programowania na czacie.#}
 {#                </h6>#}
                 <h6>
-                  <a class="nav-item nav-link btn-outline-info text-center" href="{% url 'start-code' %}">Sprawdź program nauczania i wybierz najbardziej odpowiednią ścieżkę dla siebie...</a>
+                  <a class="nav-item nav-link btn-outline-info text-center" href="{% url 'courses' %}">Sprawdź program nauczania i wybierz najbardziej odpowiednią ścieżkę dla siebie...</a>
                 </h6>
 {#                <h6>W ramach kursu poznasz rownież inne techniki programowania, w tym:#}
 {#                  <ul>#}
@@ -113,7 +132,7 @@
 {#            <p class="site-header">CHCESZ OTRZYMAĆ SZCZEGÓŁOWY PROGRAM NAUCZANIA?</p>#}
 {#            <nav>#}
 {#            <small class="mr-5">© 2019 croCode Line</small>#}
-{#            <a class="mr-3 " href="#">Regulamin</a>#}
+{#            <a class="content-sectionmr-3 " href="#">Regulamin</a>#}
 {#            <a class="mr-3" href="#">Polityka prywatności</a>#}
 {#            </nav>#}
 {#              <a class="btn-outline-info" href="#">Python</a> |#}
@@ -123,6 +142,12 @@
 {#              <a class="btn-outline-info" href="#">jQuery</a>#}
 {#        </div>#}
 {#    </footer>#}
+
+{#       <footer class="footer bg-steel">#}
+{#          <div class="container">#}
+{#              <span class="text-muted">CHCESZ OTRZYMAĆ SZCZEGÓŁOWY PROGRAM NAUCZANIA? NAPISZ DO NAS!</span>#}
+{#          </div>#}
+{#        </footer>#}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

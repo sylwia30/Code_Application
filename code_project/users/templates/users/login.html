@@ -2,25 +2,26 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="content-section">
-        <form action="#" method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Logowanie</legend>
-                    {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Zajoguj</button><br><br>
-                <smal class="text-muted ml-">
-                    <a class="btn-outline-info" href="#">Nie pamiętasz hasła?</a>
-                </smal>
-            </div>
-            <div class="border-top pt-3">
-            <small class="text-muted">
-                Nie masz konta?<a class="ml-2 btn-outline-info" href="{% url 'register' %}">Zarejestruj się!</a>
-            </small>
-            </div>
-        </form>
+    <div class="container">
+        <div class="content-section">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Logowanie</legend>
+                        {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Zajoguj</button><br><br>
+                    <smal class="text-muted ml-">
+                        <a class="btn-outline-info" href="#">Nie pamiętasz hasła?</a>
+                    </smal>
+                </div>
+                <div class="border-top pt-3">
+                <small class="text-muted">
+                    Nie masz konta?<a class="ml-2 btn-outline-info" href="{% url 'register' %}">Zarejestruj się!</a>
+                </small>
+                </div>
+            </form>
+        </div>
     </div>
-
 {% endblock content %}

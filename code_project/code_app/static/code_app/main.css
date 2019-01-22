@@ -84,7 +84,13 @@ a.article-title:hover {
 }
 
 .card-header {
-  background: #006080;
+  background: #5f788a;
   color: #ffffff;
   font-size: 25px;
+}
+
+ul {
+
+list-style-type: none;
+
 }

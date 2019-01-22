@@ -19,7 +19,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from users.views import LoginUserView, register, ProfileView, profile, UserDeleteForm
-from code_app.views import base, start_code
+from code_app.views import base, start_code, courses, python_cours, html_cours, css_cours, javascript_cours, \
+    jquery_cours
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,6 +34,12 @@ urlpatterns = [
          name='user-delete'),
     path('', base, name='base'),
     path('start_code/', start_code, name="start-code"),
+    path('courses/', courses, name="courses"),
+    path('python/', python_cours, name="python-cours"),
+    path('html/', html_cours, name="html-cours"),
+    path('css/', css_cours, name="css-cours"),
+    path('javascript/', javascript_cours, name="javascript-cours"),
+    path('jquery/', jquery_cours, name="jquery-cours"),
 
 ]
 
