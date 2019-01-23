@@ -94,3 +94,8 @@ ul {
 list-style-type: none;
 
 }
+
+/*.fixed-bottom {*/
+  /*position: sticky;*/
+  /*bottom: 0;*/
+/*}*/

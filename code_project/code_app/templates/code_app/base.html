@@ -17,23 +17,16 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-5" href="/">croCode Line</a>
+        <ul class="nav nav-pills nav-fill">
+          <li class="nav-item">
+             <a class="navbar-brand mr-5" href="/">croCode Line</a>
+          </li>
+        </ul>
+{#        <img class="img-fluid" src="media/profile_pics/crocodile.jpg" title="Photo corCode_Line" alt="Crocodile"/>#}
+{#          <a class="navbar-brand mr-5" href="/">croCode Line</a>#}
         <div class="navbar-nav">
 {#            <a class="nav-item nav-link" href="{% url 'courses' %}">Kursy</a>#}
-            <ul>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle mr-5" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
-                  <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
-                  <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
-                  <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
-                  <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
-                </div>
-              </li>
-            </ul>
+
         </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,10 +39,38 @@
 
             <div class="navbar-nav">
                 {% if user.is_authenticated %}
+                    <ul>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
+                          <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
+                          <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
+                          <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
+                          <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
+                        </div>
+                      </li>
+                    </ul>
                     <a class="nav-item nav-link" href="{% url 'chat' %}">Czat</a>
                     <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Wyjoguj</a>
                 {% else %}
+                    <ul>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
+                          <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
+                          <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
+                          <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
+                          <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
+                        </div>
+                      </li>
+                    </ul>
                     <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                     <a class="nav-item nav-link" href="{% url 'register' %}">Rejestracja</a>
                 {% endif %}
@@ -74,7 +95,7 @@
           <div class="container">
             <div class="content-section"> {# biała ramka dookoła #}
               <h2 class="text-center">
-                  Zostań programisą Pythona!
+                  Zostań programistą Pythona!
               </h2><br>
               <h5 class="text-center">
                   Poznaj jeden z najpopularniejszych języków programowania. Sam sprawdź prostotę i logikę tego języka!
@@ -143,11 +164,9 @@
 {#        </div>#}
 {#    </footer>#}
 
-{#       <footer class="footer bg-steel">#}
-{#          <div class="container">#}
-{#              <span class="text-muted">CHCESZ OTRZYMAĆ SZCZEGÓŁOWY PROGRAM NAUCZANIA? NAPISZ DO NAS!</span>#}
-{#          </div>#}
-{#        </footer>#}
+       <footer class="footer bg-steel fixed-bottom">
+              <span class="text-muted">CHCESZ OTRZYMAĆ SZCZEGÓŁOWY PROGRAM NAUCZANIA? NAPISZ DO NAS!</span>
+       </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

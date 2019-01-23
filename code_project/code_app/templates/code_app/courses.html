@@ -1,89 +1,171 @@
 {% extends 'code_app/base.html' %}
 
 {% block content %}
-
-<div class="card text-center">
-  <div class="card-header">
-    <strong>Python</strong>
-  </div>
-  <div class="card-body border-info">
-    <h5 class="card-title btn-outline-info">Ideą przewodnią Pythona jest czytelność i klarowność kodu źródłowego.
-        Jego składnia cechuje się przejrzystością i zwięzłością</h5>
-    <p class="card-text">
-        Python to łatwy do opanowania, potężny język programowania. Ma wydajne struktury danych wysokiego
-        poziomu i proste, ale skuteczne podejście do programowania obiektowego. Łatwa składnia i dynamiczne
-        pisanie w Pythonie wraz z jego zinterpretowaną naturą sprawiają, że jest to idealny język do pisania
-        skryptów i szybkiego tworzenia aplikacji w wielu obszarach na większości platform.
-    </p>
-    <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info"><strong>Start Code in Python</strong></a>
-  </div>
-</div>
-
-<p></p>
-<p></p>
-
-<div class="card text-center">
-  <div class="card-header">
-    <strong>HTLM5</strong>
-  </div>
-  <div class="card-body border-info">
-    <h5 class="card-title btn-outline-info">Język znaczników niezbędny dla każdego programisty</h5>
-    <p class="card-text">
-        Wykorzystywany do tworzenia i prezentowania stron i aplikacji internetowych www. Służy do opisania sposobu
-        wyświetlania danego elementu na stronie lub do określenia sposobu wyświetlania samej strony.
-    </p>
-    <a href="{% url 'html-cours' %}" class="btn-s btn btn-outline-info"><strong>Start Code in HTLM5</strong></a>
-  </div>
-</div>
-
-<p></p>
-<p></p>
-
-<div class="card text-center">
-  <div class="card-header">
-    <strong>CSS</strong>
-  </div>
-  <div class="card-body border-info">
-    <h5 class="card-title btn-outline-info">Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji www.</h5>
-    <p class="card-text">
-         Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji WWW.
-    </p>
-    <a href="{% url 'css-cours' %}" class="btn-s btn btn-outline-info"><strong>Start Code in CSS</strong></a>
-  </div>
-</div>
-
-<p></p>
-<p></p>
-
-<div class="card text-center">
-  <div class="card-header">
-    <strong>JavaScript</strong>
-  </div>
-  <div class="card-body border-info">
-    <h5 class="card-title btn-outline-info">Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji www.</h5>
-    <p class="card-text">
-        Skrypty Java Script służą najczęściej do zapewnienia interakcji poprzez reagowanie na zdarzenia,
-        walidacji wprowadzanych danych w formularzach lub tworzenia złożonych efektów wizualnych
-    </p>
-    <a href="{% url 'javascript-cours' %}" class="btn-s btn btn-outline-info"><strong>Start Code in JavaScript</strong></a>
-  </div>
-</div>
-<p></p>
-<p></p>
-<div class="card text-center">
-  <div class="card-header">
-    <strong>JQuery</strong>
-  </div>
-  <div class="card-body border-info">
-    <h5 class="card-title btn-outline-info">Najczęściej używana biblioteka programistyczna ułatwiająca tworzenie skryptów w Java Script</h5>
-    <p class="card-text">
-        Pozwala osiągnąć efekty animacji na stronach i w aplikacjach, dodać dynamiczne zmiany wyświetleń,
-        analizować aktywność użytkownika, wykonać zapytania AJAX i wiele innych...
-    </p>
-    <a href="{% url 'jquery-cours' %}" class="btn-s btn btn-outline-info"><strong>Start Code in JQuery</strong></a>
-  </div>
-</div>
-
+    <article class="media content-section">
+    {#            <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">#}
+        <img class="rounded-circle article-img" src="/media/profile_pics/python_logo.jpeg" title="Python_logo" alt="Python"/>
+            <div class="media-body">
+    {#                <div class="article-metadata">#}
+    {#                    <a class="mr-2 btn-outline-info" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>#}
+    {#                    <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>#}
+    {#                </div>#}
+    {#                <div><br>#}
+                <h3 class="article-title"><b>Python</b></h3>
+                <p class="article-content">
+                    Python to łatwy do opanowania, potężny język programowania. Ma wydajne struktury danych wysokiego
+                    poziomu i proste, ale skuteczne podejście do programowania obiektowego. Łatwa składnia i dynamiczne
+                    pisanie w Pythonie wraz z jego zinterpretowaną naturą sprawiają, że jest to idealny język do pisania
+                    skryptów i szybkiego tworzenia aplikacji w wielu obszarach na większości platform.
+                </p>
+                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
+                    <strong>Szczegółowy program nauczania</strong>
+                </a>
+            </div>
+    </article>
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="/media/profile_pics/html5_logo.png" title="HTLM5_logo" alt="HTLM5"/>
+            <div class="media-body">
+                <h3 class="article-title"><b>HTLM5</b></h3>
+                <p class="article-content">
+                    Język znaczników niezbędny dla każdego programisty. Wykorzystywany do tworzenia i prezentowania 
+                    stron i aplikacji internetowych www. Służy do opisania sposobu wyświetlania danego elementu na
+                    stronie lub do określenia sposobu wyświetlania samej strony.
+                </p>
+                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
+                    <strong>Szczegółowy program nauczania</strong>
+                </a>
+            </div>
+    </article>
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="/media/profile_pics/css_logo.png" title="CSS_logo" alt="CSS"/>
+            <div class="media-body">
+                <h3 class="article-title"><b>CSS</b></h3>
+                <p class="article-content">
+                    Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji www. Cascading Style
+                    Sheets czyli kaskadowe arkusze stylów to język używany do opisu układu elementów na stronie WWW.
+                    Można za jego pomocą zdefiniować wiele parametrów, takich jak rodzaj czcionek, kolor tła,
+                    wyrównanie elementów na stronie itp.
+                </p>
+                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
+                    <strong>Szczegółowy program nauczania</strong>
+                </a>
+            </div>
+    </article>
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="/media/profile_pics/javascript_logo.jpg" title="JavaScript_logo" alt="JavaScript"/>
+            <div class="media-body">
+                <h3 class="article-title"><b>JavaScript</b></h3>
+                <p class="article-content">
+                    JavaScript jest to skryptowy język, który umożliwia  obsługę dynamicznego tworzenia treści na
+                    stronie internetowej, kontrolowanie multimediów, animację obrazów. Służy najczęściej do zapewnienia
+                    interakcji poprzez reagowanie na zdarzenia, walidacji wprowadzanych danych w formularzach lub
+                    tworzenia złożonych efektów wizualnych.
+                </p>
+                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
+                    <strong>Szczegółowy program nauczania</strong>
+                </a>
+            </div>
+    </article>
+        <article class="media content-section">
+        <img class="rounded-circle article-img" src="/media/profile_pics/jquery_logo.png" title="JQuery_logo" alt="JQuery"/>
+            <div class="media-body">
+                <h3 class="article-title"><b>JQuery</b></h3>
+                <p class="article-content">
+                    Najczęściej używana biblioteka programistyczna ułatwiająca tworzenie skryptów w Java Script.Pozwala
+                    osiągnąć efekty animacji na stronach i w aplikacjach, dodać dynamiczne zmiany wyświetleń,
+                    analizować aktywność użytkownika, wykonać zapytania AJAX i wiele innych...
+                </p>
+                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
+                    <strong>Szczegółowy program nauczania</strong>
+                </a>
+            </div>
+    </article>
 {% endblock content %}
+
+{#<div class="card text-center">#}
+{#  <div class="card-header">#}
+{#    <strong>Python</strong>#}
+{#  </div>#}
+{#  <div class="card-body border-info">#}
+{#    <h5 class="card-title btn-outline-info">Ideą przewodnią Pythona jest czytelność i klarowność kodu źródłowego.#}
+{#        Jego składnia cechuje się przejrzystością i zwięzłością</h5>#}
+{#    <p class="card-text">#}
+{#        Python to łatwy do opanowania, potężny język programowania. Ma wydajne struktury danych wysokiego#}
+{#        poziomu i proste, ale skuteczne podejście do programowania obiektowego. Łatwa składnia i dynamiczne#}
+{#        pisanie w Pythonie wraz z jego zinterpretowaną naturą sprawiają, że jest to idealny język do pisania#}
+{#        skryptów i szybkiego tworzenia aplikacji w wielu obszarach na większości platform.#}
+{#    </p>#}
+{#    <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info"><strong>Szczegółowy program nauczania</strong></a>#}
+{#  </div>#}
+{#</div>#}
+{##}
+{#<p></p>#}
+{#<p></p>#}
+{##}
+{#<div class="card text-center">#}
+{#  <div class="card-header">#}
+{#    <strong>HTLM5</strong>#}
+{#  </div>#}
+{#  <div class="card-body border-info">#}
+{#    <h5 class="card-title btn-outline-info">Język znaczników niezbędny dla każdego programisty</h5>#}
+{#    <p class="card-text">#}
+{#        Wykorzystywany do tworzenia i prezentowania stron i aplikacji internetowych www. Służy do opisania sposobu#}
+{#        wyświetlania danego elementu na stronie lub do określenia sposobu wyświetlania samej strony.#}
+{#    </p>#}
+{#    <a href="{% url 'html-cours' %}" class="btn-s btn btn-outline-info"><strong>Szczegółowy program nauczania</strong></a>#}
+{#  </div>#}
+{#</div>#}
+{##}
+{#<p></p>#}
+{#<p></p>#}
+{##}
+{#<div class="card text-center">#}
+{#  <div class="card-header">#}
+{#    <strong>CSS</strong>#}
+{#  </div>#}
+{#  <div class="card-body border-info">#}
+{#    <h5 class="card-title btn-outline-info">Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji www.</h5>#}
+{#    <p class="card-text">#}
+{#         Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji WWW.#}
+{#    </p>#}
+{#    <a href="{% url 'css-cours' %}" class="btn-s btn btn-outline-info"><strong>Szczegółowy program nauczania</strong></a>#}
+{#  </div>#}
+{#</div>#}
+{##}
+{#<p></p>#}
+{#<p></p>#}
+{##}
+{#<div class="card text-center">#}
+{#  <div class="card-header">#}
+{#    <strong>JavaScript</strong>#}
+{#  </div>#}
+{#  <div class="card-body border-info">#}
+{#    <h5 class="card-title btn-outline-info">Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji www.</h5>#}
+{#    <p class="card-text">#}
+{#        Skrypty Java Script służą najczęściej do zapewnienia interakcji poprzez reagowanie na zdarzenia,#}
+{#        walidacji wprowadzanych danych w formularzach lub tworzenia złożonych efektów wizualnych#}
+{#    </p>#}
+{#    <a href="{% url 'javascript-cours' %}" class="btn-s btn btn-outline-info"><strong>Szczegółowy program nauczania</strong></a>#}
+{#  </div>#}
+{#</div>#}
+{#<p></p>#}
+{#<p></p>#}
+{#<div class="card text-center">#}
+{#  <div class="card-header">#}
+{#    <strong>JQuery</strong>#}
+{#  </div>#}
+{#  <div class="card-body border-info">#}
+{#    <h5 class="card-title btn-outline-info">Najczęściej używana biblioteka programistyczna ułatwiająca tworzenie skryptów w Java Script</h5>#}
+{#    <p class="card-text">#}
+{#        Pozwala osiągnąć efekty animacji na stronach i w aplikacjach, dodać dynamiczne zmiany wyświetleń,#}
+{#        analizować aktywność użytkownika, wykonać zapytania AJAX i wiele innych...#}
+{#    </p>#}
+{#    <a href="{% url 'jquery-cours' %}" class="btn-s btn btn-outline-info"><strong>Szczegółowy program nauczania</strong></a>#}
+{#  </div>#}
+{#</div>#}
+{#<p></p>#}
+{#<p></p>#}
+
+
 
 

@@ -1,6 +1,114 @@
 {% extends 'code_app/base.html' %}
 
 {% block content %}
-    <p>Python</p>
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="/media/profile_pics/python_logo.jpeg" title="Python_logo" alt="Python"/>
+            <div class="media-body">
+                <h3 class="article-title"><b>Python</b></h3>
+                <p class="article-content">
+                    <h6 class="article-title"><b>PROGRAM KURSU:</b></h6>
+                </p>
+            </div>
+                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
+                    <strong>Start Code in Python</strong>
+                </a>
+    </article>
+
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Zmienne i typy danych
+            <span class="badge badge-primary badge-pill">14</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Operacja logiczne
+            <span class="badge badge-primary badge-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Tablice
+            <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Podstawowe operatory
+            <span class="badge badge-primary badge-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Formatowanie Napisów
+            <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Podstawowe operacje na napisach
+            <span class="badge badge-primary badge-pill">9</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Zaawansowane operacje na napisach
+            <span class="badge badge-primary badge-pill">6</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Pozostałe typy danych
+            <span class="badge badge-primary badge-pill">3</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Formaty plików, odczyt i zapis plików
+            <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Moduły numeryczne i matematyczne
+            <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Dostęp do plików i katalogów
+            <span class="badge badge-primary badge-pill">5</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Instrukcje warunkowe
+            <span class="badge badge-primary badge-pill">11</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Pętle
+            <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Funkcje
+            <span class="badge badge-primary badge-pill">8</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Słowniki
+            <span class="badge badge-primary badge-pill">12</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Moduły i pakiety
+            <span class="badge badge-primary badge-pill">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Listy składane
+            <span class="badge badge-primary badge-pill">1</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Funkcje o zmiennej liczbie argumentów
+            <span class="badge badge-primary badge-pill">3</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Wyrażenia regularne
+            <span class="badge badge-primary badge-pill">4</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Obsługa wyjątków
+            <span class="badge badge-primary badge-pill">6</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Zbiory
+            <span class="badge badge-primary badge-pill">4</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            Funkcje częściowe
+            <span class="badge badge-primary badge-pill">7</span>
+        </li>
+    </ul>
 
 {% endblock content %}
+
+{#grupa list#}
+{#https://getbootstrap.com/docs/4.0/components/list-group/#}
+
+{# scrollspy#}
+{#https://getbootstrap.com/docs/4.0/components/scrollspy/#list-item-2#}
