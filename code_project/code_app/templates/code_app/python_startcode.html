@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.2/ace.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'code_app/code_main.css' %}">
+</head>
+
+<body>
+    <div id='container'>
+        <div id="editor">
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <textarea id="answer" name="answer"></textarea>
+            <button type="submit">Run</button>
+        </form>
+        <iframe id='iframe' frameBorder="0">
+        </iframe>
+    </div>
+    <div id="hidden-exercise">
+        <h3>Rozdziały</h3>
+        {% for section in form %}
+            <ul>
+                <li><a href="#" title="Zadania" class="titles">{{ section.section }}</a></li>
+                <div class="exercise">
+                    <p>Zadanie 1</p>
+                    <p>Zadanie 2</p>
+                </div>
+            </ul>
+        {% endfor %}
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'code_app/python_editor_box.js' %}"></script>
+<script src="{% static 'code_app/python_hidden_exercises.js' %}"></script>
+</body>
+</html>

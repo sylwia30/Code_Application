@@ -1,0 +1,40 @@
+html,body { margin:0; padding:0; height:100%; width:100%;}
+
+#editor {
+    height: 80%;
+    width:50%;
+    display:inline-block;
+
+}
+
+#container {
+    height:80%;
+    width:auto;
+    white-space : nowrap;
+    overflow : hidden;
+    position:relative;
+}
+
+#iframe {
+    height:80%;
+    display:inline-block;
+    width:50%;
+}
+
+/* disable tag matching */
+.ace_editor .ace_marker-layer .ace_bracket { display: none }
+
+.exercise {
+    display: none;
+}
+
+.box-alert {
+    position: fixed;
+    top: 20vh;
+    left: 30vw;
+    width: 40vw;
+    height: 20vh;
+    border: 1px solid black;
+    z-index: 9999;
+    background: white;
+}

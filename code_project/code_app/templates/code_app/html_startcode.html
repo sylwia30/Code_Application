@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.2/ace.js"></script>
+    <style>
+        html,body { margin:0; padding:0; height:100%; width:100%;}
+
+        #editor {
+            height: 80%;
+            width:50%;
+            display:inline-block;
+        }
+
+        #container {
+            height:80%;
+            width:auto;
+            white-space : nowrap;
+            overflow : hidden;
+            position:relative;
+        }
+
+        #iframe {
+            height:80%;
+            display:inline-block;
+            width:50%;
+        }
+
+        /* disable tag matching */
+        .ace_editor .ace_marker-layer .ace_bracket { display: none }
+
+    </style>
+</head>
+
+<body onload="ready()">
+    <div id='container'>
+        <div id="editor">
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Run</button>
+        </form>
+        <iframe id='iframe' frameBorder="0">
+        </iframe>
+    </div>
+    <div id="container">
+        <h3>Znaczniki, elementy, atrybuty</h3>
+        <p>
+            Kod HTML zawiera w sobie znaczniki i elementy. Element tworzony jest za pomocą nawiasu kątowego <>,
+            w którym znajduje się ciąg znaków. Wyróżniamy znaczniki otwierające &lt;&gt; i zamykające &lt;/&gt;.<br>
+            Nie wszystkie elementy posiadają znacznik zamykający.</p>
+        <p>Znacznik otwierający i zamykający:<br>
+            &lt;p&gt;………&lt;/p&gt; - akapit<br>
+        <p>Element nieposiadający znacznika zamykającego:<br>
+        ……&lt;br&gt; - przenosi tekst do następnego wiersza</p>
+        <h3>Struktura strony HTML posiada część stałych elementów</h3>
+        <p>Kod zaczynać się powinien od deklaracji DOCTYPE, która informuje przeglądarkę w której wersji HTML-a dana
+            strona została napisana. W przypadku HTML5 deklaracja wygląda następująco:
+        </p>
+        <p>
+            &lt;!DOCTYPE html &gt; - mówi przeglądarce, że strona jest napisana w HTML5 (ten znacznik występuje tylko raz)<br>
+            &lt;html&gt; - w tej treści jest zawarty cały nasz kod strony (ten znacznik występuje tylko raz)<br>
+            &lt;head&gt;&lt;/head&gt; - zawiera informacje tj. tytuł strony, używany język, odniesienia do innych plików
+            ten znacznik występuje tylko raz)<br>
+            &lt;title&gt;&lt;/title&gt; tytuł strony, umieszcza się go pomiędzy &lt;head&gt;<br>
+            &lt;body&gt;&lt;/body&gt;- tu umieszczamy treść strony, tabele, zdjęcia<br>
+            &lt;/html&gt;
+        </p>
+        <h3>Atrybuty</h3>
+        <p>
+            Znaczniki posiadają również atrybuty, które przekazują dodatkowe informacje o elementach. Umieszczane są w
+            znaczniku otwierającym. Składają się z nazwy atrybutu oraz wartości. Oddzielamy je <br>znakiem równości,
+            zaleca się wartość atrybutu pisać w cudzysłowie a nazwę atrybutu pisać z małych liter. W zdecydowanej
+            większości konkretny atrybut jest przypisywany wyłącznie do jednego <br> konkretnego elementu. Istnieją jednak
+            wyjątki, niektóre atrybuty mogą występować w kilku różnych elementach języka HTML. np. Atrybut „lang”
+            występuje w wielu elementach i określa język,<br> w którym została zapisana treść danego elementu.<br><br>
+            &lt;h1 lang=”pl”&gt;Moja pierwsza strona internetowa&lt;/h1&gt;<br>
+            &lt;p lang=”en”&gt;Moja pierwsza strona internetowa&lt;/p&gt;
+        </p>
+    </div>
+
+<script>
+        function update()
+    {
+        var idoc = document.getElementById('iframe').contentWindow.document;
+
+        idoc.open();
+        idoc.write(editor.getValue());
+        idoc.close();
+    }
+
+    function setupEditor()
+    {
+      window.editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/html");
+      editor.setValue(`<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+</body>
+
+</html>`,1); //1 = moves cursor to end
+
+      editor.getSession().on('change', function() {
+        update();
+      });
+
+      editor.focus();
+
+
+      editor.setOptions({
+        fontSize: "16pt",
+        showLineNumbers: false,
+        showGutter: false,
+        vScrollBarAlwaysVisible:true,
+        enableBasicAutocompletion: false, enableLiveAutocompletion: false
+      });
+
+      editor.setShowPrintMargin(false);
+      editor.setBehavioursEnabled(false);
+    }
+
+    setupEditor();
+    update();
+
+</script>
+</body>
+</html>

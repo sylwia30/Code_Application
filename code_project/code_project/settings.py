@@ -136,3 +136,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'base' # po zalogowaniu przekierowuje nas do strony głównej base
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

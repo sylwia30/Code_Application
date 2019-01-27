@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Exercises, Courses, CheckSyntax
+
+admin.site.register(Exercises)
+
+admin.site.register(Courses)
+
+admin.site.register(CheckSyntax)

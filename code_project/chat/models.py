@@ -5,8 +5,8 @@ from django.db import models
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Tytuł:")
-    content = models.TextField(verbose_name="Treść:")
+    title = models.CharField(max_length=100, verbose_name="tytuł:")
+    content = models.TextField(verbose_name="treść:")
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
