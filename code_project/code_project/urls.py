@@ -41,8 +41,6 @@ urlpatterns = [
     path('html/', html_cours, name="html-cours"),
     path('html_cours/', html_start_code, name="html-start-cours"),
 
-
-
     path('css/', css_cours, name="css-cours"),
     path('javascript/', javascript_cours, name="javascript-cours"),
     path('jquery/', jquery_cours, name="jquery-cours"),

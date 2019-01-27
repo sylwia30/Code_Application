@@ -2,84 +2,80 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="icon" href="../../../../favicon.ico">
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'code_app/main.css' %}">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="{% static 'code_app/main.css' %}">
 
-      <title>Codding</title>
+      <title>croCode Line</title>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <img class="img-fluid mr-3" src="/media/profile_pics/crocodile.jpg" title="Photo corCode_Line" alt="Crocodile" width="80" height="80"/>
-
-        <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-             <a class="navbar-brand mr-5" href="/">croCode Line</a>
-          </li>
-        </ul>
-      <div class="container">
-{#        <img class="img-fluid" src="media/profile_pics/crocodile.jpg" title="Photo corCode_Line" alt="Crocodile"/>#}
-{#          <a class="navbar-brand mr-5" href="/">croCode Line</a>#}
-        <div class="navbar-nav">
-        </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link btn-outline-info" href="{% url 'start-code' %}">Start Code!</a>
-            </div>
-            <!-- Navbar Right Side -->
-
-            <div class="navbar-nav">
-                {% if user.is_authenticated %}
-                    <ul>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
-                          <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
-                          <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
-                          <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
-                          <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
-                        </div>
-                      </li>
-                    </ul>
-                    <a class="nav-item nav-link" href="{% url 'chat' %}">Czat</a>
-                    <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}</a>
-                    <a class="nav-item nav-link" href="{% url 'logout' %}">Wyjoguj</a>
-                {% else %}
-                    <ul>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
-                          <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
-                          <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
-                          <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
-                          <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
-                        </div>
-                      </li>
-                    </ul>
-                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                    <a class="nav-item nav-link" href="{% url 'register' %}">Rejestracja</a>
+      <header class="site-header">
+          <!-- Navbar Left Side -->
+          <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+              <img class="img-fluid mr-3" src="/media/profile_pics/crocodile.jpg" title="Photo corCode_Line" alt="Crocodile" width="90" height="90"/>
+              <ul class="nav nav-pills nav-fill">
+                  <li class="nav-item">
+                      <strong><a class="navbar-brand mr-5" href="/">croCode Line</a></strong>
+                  </li>
+              </ul>
+          <div class="container">
+              <div class="navbar-nav">
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarToggle">
+                  <div class="navbar-nav mr-auto">
+                      <strong><a class="nav-item nav-link btn-outline-info" href="{% url 'start-code' %}">Start Code!</a></strong>
+                  </div>
+              </div>
+              <!-- Navbar Right Side -->
+              <div class="navbar-nav">
+                  {% if user.is_authenticated %}
+                      <ul>
+                          <li class="nav-item dropdown">
+                              <strong><a class="nav-link dropdown-toggle mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a></strong>
+                              <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
+                                  <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
+                                  <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
+                                  <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
+                                  <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
+                              </div>
+                          </li>
+                      </ul>
+                      <strong><a class="nav-item nav-link" href="{% url 'chat' %}">Czat</a></strong>
+                      <strong><a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}</a></strong>
+                      <strong><a class="nav-item nav-link" href="{% url 'logout' %}">Wyjoguj</a></strong>
+                  {% else %}
+                        <ul>
+                            <li class="nav-item dropdown">
+                            <strong><a class="nav-link dropdown-toggle mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kursy</a></strong>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{% url 'python-cours' %}">Python</a>
+                                <a class="dropdown-item" href="{% url 'html-cours' %}">HTML</a>
+                                <a class="dropdown-item" href="{% url 'css-cours' %}">CSS</a>
+                                <a class="dropdown-item" href="{% url 'javascript-cours' %}">JavaScript</a>
+                                <a class="dropdown-item" href="{% url 'jquery-cours' %}">JQuery</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'courses' %}">Wszystkie kursy</a>
+                            </div>
+                            </li>
+                        </ul>
+                        <strong><a class="nav-item nav-link" href="{% url 'login' %}">Login</a></strong>
+                        <strong><a class="nav-item nav-link" href="{% url 'register' %}">Rejestracja</a></strong>
                 {% endif %}
-            </div>
+              </div>
           </div>
-        </div>
-      </nav>
-    </header>
-    <main role="main" class="container">
+          </nav>
+      </header>
+      <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
           {% if messages  %}
