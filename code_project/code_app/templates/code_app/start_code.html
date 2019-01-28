@@ -1,26 +1,82 @@
 {% extends 'code_app/base.html' %}
 
 {% block content %}
-  {% load static %}
-  <script src="{% static 'ace-builds/src-noconflict/ace.js' %}"
-          type="text/javascript" charset="utf-8"></script>
-   <div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-    }
-  </div>
-
-  <script>
-      var editor = ace.edit("editor");
-      editor.setTheme("ace/theme/monokai");
-      editor.session.setMode("ace/mode/javascript");
-  </script>
-
-
+    <div class="container text-center">
+        <div class="content-section text-center">
+            <h3 class="text-center"><strong>Sam zdecyduj od czego zaczniesz!</strong></h3><br>
+            <div class="text-center">
+                <div class="card tlo">
+                    <div class="card-body">
+                        <img class="text-center" src="/media/profile_pics/python_logo2.png" title="Python_logo" alt="Python" width="190" height="190"/>
+                        <h5 class="card-title text-center"><strong>Python</strong></h5>
+                        <p class="card-text">
+                             Chcesz poznać funkcje, klasy, zaawansowane operacje logiczne, moduły czy też  słowniki jakie kryje w
+                             sobie język obiektowy Python?
+                        </p>
+                        <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info"><strong>Get Start!</strong></a>
+                    </div>
+                </div>
+            </div>
+            <p></p><br>
+            <h3 class="text-center"><strong>Projektowanie stron internetowych i aplikacji?</strong></h3><br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card tlo">
+                        <div class="card-body">
+                            <img class="rounded-circle article-img" src="/media/profile_pics/html5_logo.png" title="HTLM5_logo" alt="HTLM5"/>
+                            <h5 class="card-title text-center"><strong>HTML</strong></h5>
+                            <p class="card-text">Łatwy i przyjazny język znaczników, dzięki któremu stworzysz swoją pierwszą stronę www</p>
+                            <a href="{% url 'html-cours' %}" class="btn-s btn btn-outline-info"><strong>Get Start!</strong></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card tlo">
+                        <div class="card-body">
+                            <img class="rounded-circle article-img" src="/media/profile_pics/css_logo.png" title="CSS_logo" alt="CSS"/>
+                            <h5 class="card-title text-center"><strong>CSS</strong></h5>
+                            <p class="card-text">Zaprojektuj wizuanie swoją stronę, aby była przyjazna dla użytkownika i dla Ciebie :)</p>
+                            <a href="{% url 'css-cours' %}" class="btn-s btn btn-outline-info"><strong>Get Start!</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p></p><br>
+            <h3 class="text-center"><strong>Może tworzenie złożonych efektów wizualnych?</strong></h3><br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card tlo">
+                        <div class="card-body">
+                            <img class="rounded-circle article-img" src="/media/profile_pics/javascript_logo.jpg" title="JavaScript_logo" alt="JavaScript"/>
+                            <h5 class="card-title text-center"><strong>JavaScript</strong></h5>
+                            <p class="card-text">Łatwy język znaczników, dzięki któremu stworzysz swoją pierwszą stronę www</p>
+                            <a href="{% url 'javascript-cours' %}" class="btn-s btn btn-outline-info"><strong>Get Start!</strong></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card tlo">
+                        <div class="card-body">
+                            <img class="rounded-circle article-img" src="/media/profile_pics/jquery_logo.png" title="JQuery_logo" alt="JQuery"/>
+                            <h5 class="card-title text-center"><strong>JQuesry</strong></h5>
+                            <p class="card-text">Zaprojektuj wizuanie swoją stronę, aby była przyjazna dla użytkownika i dla Ciebie :)</p>
+                            <a href="{% url 'jquery-cours' %}" class="btn-s btn btn-outline-info"><strong>Get Start!</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
 
-
-
-
-
-{#    <script src="ace-builds/demo/show_own_source.js"></script>#}
+{#            <div class="card">#}
+{#                <div class="card-body">#}
+{#                    <img class="text-center" src="/media/profile_pics/python_logo.jpeg" title="Python_logo" alt="Python"/>#}
+{#                    <h5 class="card-title text-center"><strong>Python</strong></h5>#}
+{#                     <p class="card-text">#}
+{#                         Chcesz poznać funkcje, klasy, zaawansowane operacje logiczne, moduły czy też  słowniki jakie kryje w#}
+{#                         sobie język obiektowy Python?#}
+{#                     </p>#}
+{#                    <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info"><strong>Get Start!</strong></a>#}
+{#                </div>#}
+{#            </div>#}
