@@ -14,7 +14,17 @@ def start_code(request):
     return render(request, 'code_app/start_code.html')
 
 def courses(request):
-    return render(request, 'code_app/courses.html')
+    python_describe = Courses.objects.get(pk=1)
+    html_describe = Courses.objects.get(pk=2)
+    css_describe = Courses.objects.get(pk=3)
+    js_describe = Courses.objects.get(pk=4)
+    jquery_describe = Courses.objects.get(pk=5)
+    return render(request, 'code_app/courses.html', {"python_describe": python_describe,
+                                                     "html_describe": html_describe,
+                                                     "css_describe": css_describe,
+                                                     "js_describe": js_describe,
+                                                     "jquery_describe": jquery_describe,
+                                                     })
 
 def python_cours(request):
     return start_code_get(request, 1)
@@ -74,16 +84,20 @@ class ExerciseView(LoginRequiredMixin, View):
 
 
 def html_cours(request):
-    return render(request, 'code_app/html_cours.html')
+    html_sections = Languages.objects.filter(courses_id=2)
+    return render(request, 'code_app/html_cours.html', {"html_sections": html_sections})
 
 def html_start_code(request):
     return render(request, 'code_app/html_startcode.html')
 
 def css_cours(request):
-    return render(request, 'code_app/css_cours.html')
+    css_sections = Languages.objects.filter(courses_id=3)
+    return render(request, 'code_app/css_cours.html', {"css_sections": css_sections})
 
 def javascript_cours(request):
-    return render(request, 'code_app/javascript_cours.html')
+    js_sections = Languages.objects.filter(courses_id=4)
+    return render(request, 'code_app/javascript_cours.html', {"js_sections": js_sections})
 
 def jquery_cours(request):
-    return render(request, 'code_app/jquery_cours.html')
+    jq_sections = Languages.objects.filter(courses_id=5)
+    return render(request, 'code_app/jquery_cours.html', {"jq_sections": jq_sections})

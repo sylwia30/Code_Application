@@ -8,6 +8,10 @@ class Courses(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     template_path = models.CharField(max_length=100, default='code_app/python_startcode.html')
 
+    def __str__(self):
+        return self.language_name
+
+
 class Languages(models.Model):
     '''lista rozdzialow'''
     nr_section = models.IntegerField(unique=True)
@@ -62,6 +66,3 @@ class UserExercises(models.Model):
 
 # Exercises.objects.create(result=5, id_language=1, id_section=1)
 # e = Exercises.objects.get(pk=1)
-
-
-

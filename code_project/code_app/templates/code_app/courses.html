@@ -1,15 +1,13 @@
 {% extends 'code_app/base.html' %}
-
 {% block content %}
     <article class="media content-section">
         <img class="rounded-circle article-img" src="/media/profile_pics/python_logo.jpeg" title="Python_logo" alt="Python"/>
             <div class="media-body">
-                <h3 class="article-title"><b>Python</b></h3>
+                <h3 class="article-title"><b>{{ python_describe.language_name }}</b></h3>
                 <p class="article-content">
-                    Python to łatwy do opanowania, potężny język programowania. Ma wydajne struktury danych wysokiego
-                    poziomu i proste, ale skuteczne podejście do programowania obiektowego. Łatwa składnia i dynamiczne
-                    pisanie w Pythonie wraz z jego zinterpretowaną naturą sprawiają, że jest to idealny język do pisania
-                    skryptów i szybkiego tworzenia aplikacji w wielu obszarach na większości platform.
+                    <p class="text-justyfy">
+                        {{ python_describe.description }}
+                    </p>
                 </p>
                 <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
                     <strong>Szczegółowy program nauczania</strong>
@@ -19,11 +17,11 @@
     <article class="media content-section">
         <img class="rounded-circle article-img" src="/media/profile_pics/html5_logo.png" title="HTLM5_logo" alt="HTLM5"/>
             <div class="media-body">
-                <h3 class="article-title"><b>HTLM5</b></h3>
-                <p class="article-content">
-                    Język znaczników niezbędny dla każdego programisty. Wykorzystywany do tworzenia i prezentowania 
-                    stron i aplikacji internetowych www. Służy do opisania sposobu wyświetlania danego elementu na
-                    stronie lub do określenia sposobu wyświetlania samej strony.
+                <h3 class="article-title"><b>{{ html_describe.language_name }}</b></h3>
+                <p class="article-content text-justyfy">
+                    <p class="text-justyfy">
+                        {{ html_describe.description }}
+                    </p>
                 </p>
                 <a href="{% url 'html-cours' %}" class="btn-s btn btn-outline-info">
                     <strong>Szczegółowy program nauczania</strong>
@@ -33,12 +31,11 @@
     <article class="media content-section">
         <img class="rounded-circle article-img" src="/media/profile_pics/css_logo.png" title="CSS_logo" alt="CSS"/>
             <div class="media-body">
-                <h3 class="article-title"><b>CSS</b></h3>
+                <h3 class="article-title"><b>{{ css_describe.language_name }}</b></h3>
                 <p class="article-content">
-                    Język służący do opisu formy prezentacji (wyświetlania) stron i aplikacji www. Cascading Style
-                    Sheets czyli kaskadowe arkusze stylów to język używany do opisu układu elementów na stronie WWW.
-                    Można za jego pomocą zdefiniować wiele parametrów, takich jak rodzaj czcionek, kolor tła,
-                    wyrównanie elementów na stronie itp.
+                    <p class="text-justyfy">
+                        {{ css_describe.description }}
+                    </p>
                 </p>
                 <a href="{% url 'css-cours' %}" class="btn-s btn btn-outline-info">
                     <strong>Szczegółowy program nauczania</strong>
@@ -48,12 +45,11 @@
     <article class="media content-section">
         <img class="rounded-circle article-img" src="/media/profile_pics/javascript_logo.jpg" title="JavaScript_logo" alt="JavaScript"/>
             <div class="media-body">
-                <h3 class="article-title"><b>JavaScript</b></h3>
+                <h3 class="article-title"><b>{{ js_describe.language_name }}</b></h3>
                 <p class="article-content">
-                    JavaScript jest to skryptowy język, który umożliwia  obsługę dynamicznego tworzenia treści na
-                    stronie internetowej, kontrolowanie multimediów, animację obrazów. Służy najczęściej do zapewnienia
-                    interakcji poprzez reagowanie na zdarzenia, walidacji wprowadzanych danych w formularzach lub
-                    tworzenia złożonych efektów wizualnych.
+                    <p class="text-justyfy">
+                        {{ js_describe.description }}
+                    </p>
                 </p>
                 <a href="{% url 'javascript-cours' %}" class="btn-s btn btn-outline-info">
                     <strong>Szczegółowy program nauczania</strong>
@@ -63,11 +59,11 @@
         <article class="media content-section">
         <img class="rounded-circle article-img" src="/media/profile_pics/jquery_logo.png" title="JQuery_logo" alt="JQuery"/>
             <div class="media-body">
-                <h3 class="article-title"><b>JQuery</b></h3>
+                <h3 class="article-title"><b>{{ jquery_describe.language_name }}</b></h3>
                 <p class="article-content">
-                    Najczęściej używana biblioteka programistyczna ułatwiająca tworzenie skryptów w Java Script.Pozwala
-                    osiągnąć efekty animacji na stronach i w aplikacjach, dodać dynamiczne zmiany wyświetleń,
-                    analizować aktywność użytkownika, wykonać zapytania AJAX i wiele innych...
+                    <p class="text-justyfy">
+                        {{ jquery_describe.description }}
+                    </p>
                 </p>
                 <a href="{% url 'jquery-cours' %}" class="btn-s btn btn-outline-info">
                     <strong>Szczegółowy program nauczania</strong>

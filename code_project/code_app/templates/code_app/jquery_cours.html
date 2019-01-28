@@ -1,47 +1,29 @@
 {% extends 'code_app/base.html' %}
-
 {% block content %}
-    <article class="media content-section">
-        <img class="rounded-circle article-img" src="/media/profile_pics/javascript_logo.jpg" title="JavaScript_logo" alt="JavaScript"/>
+    <br>
+    <article class="media content-section background-boxes">
+        <img class="rounded-circle article-img" src="/media/profile_pics/jquery_logo.png" title="JQuery_logo" alt="JQuery"/>
             <div class="media-body">
-                <h3 class="article-title"><b>JavaScript</b></h3>
+                <h3 class="article-title"><strong>JQuery</strong></h3>
                 <p class="article-content">
                     <h6 class="article-title"><b>PROGRAM KURSU:</b></h6>
                 </p>
             </div>
-                <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info">
-                    <strong>Start Code in JavaScript</strong>
+                <a href="#" class="btn-s btn btn-outline-info">
+                    <strong>Start Code in JQuery</strong>
                 </a>
     </article>
-
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            jQuery
-            <span class="badge badge-primary badge-pill">14</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Ajax i JSON
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            API
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Obsługa błędów i debugowanie
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Panele zawartości
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Filtrowanie, wyszukiwanie i sortowanie
-            <span class="badge badge-primary badge-pill">9</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Usprawnienia i weryfikacja formularzy sieciowych
-            <span class="badge badge-primary badge-pill">9</span>
-        </li>
-    </ul>
+        <ul class="list-group">
+            {% for i in jq_sections %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ i.section }}
+                <span class="badge badge-primary badge-pill">
+                    {{ i.section_id.all.count }}
+                </span>
+            </li>
+        {% endfor %}
+        </ul><br>
+        <a href="{% url 'start-code' %}" class="btn-s btn btn-outline-info">
+           <strong>Sprawdź inne języki</strong>
+        </a>
 {% endblock content %}

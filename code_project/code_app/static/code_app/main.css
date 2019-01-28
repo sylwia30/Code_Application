@@ -117,4 +117,6 @@ list-style-type: none;
   background: #eff1f3;
 }
 
-
+.text-justyfy {
+  text-align: justify;
+}

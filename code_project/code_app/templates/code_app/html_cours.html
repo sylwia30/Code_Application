@@ -1,56 +1,29 @@
 {% extends 'code_app/base.html' %}
-
 {% block content %}
-    <article class="media content-section">
+    <br>
+    <article class="media content-section background-boxes">
         <img class="rounded-circle article-img" src="/media/profile_pics/html5_logo.png" title="HTML5_logo" alt="HTML"/>
             <div class="media-body">
-                <h3 class="article-title"><b>HTML5</b></h3>
+                <h3 class="article-title"><strong>HTLM</strong></h3>
                 <p class="article-content">
                     <h6 class="article-title"><b>PROGRAM KURSU:</b></h6>
                 </p>
             </div>
-                <a href="{% url 'html-start-cours' %}" class="btn-s btn btn-outline-info">
+                <a href="#" class="btn-s btn btn-outline-info">
                     <strong>Start Code in HTML</strong>
                 </a>
     </article>
-
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Struktura, znaczniki i elementy
-            <span class="badge badge-primary badge-pill">14</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Test, nagłówki i akapity
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Listy
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Łącza
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Obrazy i optymalizacja
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Tabele
-            <span class="badge badge-primary badge-pill">9</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Formularze
-            <span class="badge badge-primary badge-pill">6</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Dodatkowe elementy HTML
-            <span class="badge badge-primary badge-pill">3</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Flash, wideo i audio
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-    </ul>
-
+        <ul class="list-group">
+            {% for i in html_sections %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ i.section }}
+                <span class="badge badge-primary badge-pill">
+                    {{ i.section_id.all.count }}
+                </span>
+            </li>
+        {% endfor %}
+        </ul><br>
+        <a href="{% url 'start-code' %}" class="btn-s btn btn-outline-info">
+           <strong>Sprawdź inne języki</strong>
+        </a>
 {% endblock content %}
