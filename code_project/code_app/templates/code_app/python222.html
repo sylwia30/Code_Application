@@ -15,7 +15,7 @@
   <title>croCode Line</title>
 </head>
 
-<body>
+<body id="background-all">
      {% if messages  %}
         <div class="box-alert col-md-8">
             {% for message in messages %}
@@ -30,20 +30,35 @@
 <div id="container">
         <div id="editor">
         </div>
+        <div id="sylwia">
+            <h2>Przeczytaj dokładnie zadanie i rozwiąż je w lewym oknie:</h2><br>
+            <p>{{ exercise.description }}</p><br>
+            <div id="wytyczne">
+            <p><strong>Wskazówki:</strong></p>
+            <ul>
+                <li>Stosuj się do powyższych wskazówek</li>
+                <li>Pamiętaj, aby zmienne nazywać tak jak w treści zadania</li>
+                <li>Używaj takich metod jakie nakazuje treść zadania</li>
+                <li>System pozwala na wszelkie możliwości rozwiązania zadań pod warunkiem, że stosujesz się do wytycznych</li>
+            </ul>
+                </div>
+        </div>
+    </div>
+
         <form method="POST">
+            <button type="submit" class="btn-run">Run</button>
+            <button type="button" class="btn-next">Następne zadanie</button>
             {% csrf_token %}
             <textarea id="answer" name="answer" style="display:none;"></textarea>
 {#            <button type="submit">python222</button>#}
-            <button type="submit" class="btn btn-success">Run</button>
-            <button type="button" class="btn btn-secondary">Następne zadanie</button>
+
         </form>
-        <iframe id='iframe' frameBorder="0">{{ answer }}
+     <iframe id='iframe' frameBorder="0">{{ answer }}
         </iframe>
 
-        <h3>Treść zadania</h3>
-        {{ exercise.description }}
-    
-</div>
+
+
+
 
 <script src="{% static 'code_app/python_editor_box.js' %}"></script>
 <!-- Optional JavaScript -->

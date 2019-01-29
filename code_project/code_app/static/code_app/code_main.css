@@ -1,7 +1,7 @@
 html,body { margin:0; padding:0; height:100%; width:100%;}
 
 #editor {
-    height: 90%;
+    height: 100%;
     width:50%;
     display:inline-block;
 
@@ -15,10 +15,15 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     position: relative;
 }
 
-#iframe {
-    height:90%;
+#sylwia {
+    height:100%;
     width:50%;
     display:inline-block;
+    position: absolute;
+    background: #404040;
+    color: white;
+    text-align: justify;
+    padding: 1cm;
 }
 
 #lesson {
@@ -27,6 +32,29 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     display:inline-block;
 }
 
+.btn-run {
+    background: #66ff99;
+    width: 90px;
+    height: 50px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.btn-next {
+    background: #0099cc;
+    width: auto;
+    height: 50px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+#wytyczne {
+    position: relative;
+}
+
+#background-all {
+    background: #404040;
+}
 /* disable tag matching */
 .ace_editor .ace_marker-layer .ace_bracket { display: none }
 
