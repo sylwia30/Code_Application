@@ -1,7 +1,7 @@
 html,body { margin:0; padding:0; height:100%; width:100%;}
 
 #editor {
-    height: 80%;
+    height: 90%;
     width:50%;
     display:inline-block;
 
@@ -12,13 +12,19 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     width:auto;
     white-space : nowrap;
     overflow : hidden;
-    position:relative;
+    position: relative;
 }
 
 #iframe {
-    height:80%;
-    display:inline-block;
+    height:90%;
     width:50%;
+    display:inline-block;
+}
+
+#lesson {
+    height:90%;
+    width:50%;
+    display:inline-block;
 }
 
 /* disable tag matching */
@@ -36,5 +42,9 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     height: 20vh;
     border: 1px solid black;
     z-index: 9999;
-    background: white;
+    background: gray;
+
+}
+.massage-view {
+    text-align: center;
 }

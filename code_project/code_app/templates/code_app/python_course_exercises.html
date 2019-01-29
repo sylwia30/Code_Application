@@ -1,0 +1,57 @@
+{% extends 'code_app/base.html' %}
+
+{% block content %}
+
+<div class="container text-center">
+    <div class="content-section text-center">
+        <div class="text-center">
+            <div class="card background-boxes">
+                <div class="card-body">
+                    <img class="text-center" src="/media/profile_pics/python_logo2.png" title="Python_logo" alt="Python" width="190" height="190"/>
+                    <h2 class="card-title text-center"><strong>Python</strong></h2>
+                    <p class="card-text">
+                        Poniżej znajduje się Twój zestaw materiałów dydaktycznych, bloków, ćwiczeń oraz zadań domowych.<br>
+                        <strong>Powodzenia ;)</strong>
+                    </p>
+                </div>
+            </div><br>
+                <a href="{% url 'python-cours' %}"><button type="button" class="btn btn btn-info"><strong>Start</strong></button></a>
+                <a href="{% url 'python-cours' %}"><button type="button" class="btn btn btn-info"><strong>Kontynuuj...</strong></button></a>
+                <a href="{% url 'start-code' %}" class="btn-s btn btn-outline-info"><strong>Przejdź do innego języka</strong></a>
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <div class="list-group col-sm-15">
+        <li class="list-group-item list-group-item-dark"><h5><strong>Podstawy Python</strong></h5></li>
+            {% for section in language_sections|slice:":8" %}
+                <a href="#" class="list-group-item list-group-item-action">{{ section.section}}</a>
+            {% endfor %}
+        <li class="list-group-item list-group-item-action"><h5><strong>Zadania domowe</strong></h5></li>
+        <li class="list-group-item list-group-item-info"><h5><strong>Egzamin</strong></h5></li>
+    </div><br><br>
+    <div class="list-group col-sm-15">
+        <li class="list-group-item list-group-item-dark"><h5><strong>Instrukje warunkowe, pętle</strong></h5></li>
+        {% for section in language_sections|slice:"8:12" %}
+            <a href="#" class="list-group-item list-group-item-action">{{ section.section}}</a>
+        {% endfor %}
+            <li class="list-group-item list-group-item-action"><h5><strong>Zadania domowe</strong></h5></li>
+            <li class="list-group-item list-group-item-info"><h5><strong>Egzamin</strong></h5></li>
+    </div>
+    <br><br>
+    <div class="list-group col-sm-15">
+        <li class="list-group-item list-group-item-dark"><h5><strong>Funkcje i klasy</strong></h5></li>
+        {% for section in language_sections|slice:"13:22" %}
+            <a href="#" class="list-group-item list-group-item-action">{{ section.section}}</a>
+        {% endfor %}
+            <li class="list-group-item list-group-item-action"><h5><strong>Zadania domowe</strong></h5></li>
+            <li class="list-group-item list-group-item-info"><h5><strong>Egzamin</strong></h5></li>
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock content %}

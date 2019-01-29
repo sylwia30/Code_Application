@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from users.views import LoginUserView, register, ProfileView, profile, UserDeleteForm
 from code_app.views import base, start_code, courses, python_cours, html_cours, css_cours, javascript_cours, \
-    jquery_cours, html_start_code, start_code_get, ExerciseView
+    jquery_cours, html_start_code, start_code_get, ExerciseView, PythonCourseAllView, ExerciseView222
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -40,11 +40,12 @@ urlpatterns = [
     path('python/<int:pk>/', ExerciseView.as_view(), name="python-exercise"),
     path('html/', html_cours, name="html-cours"),
     path('html_cours/', html_start_code, name="html-start-cours"),
-
     path('css/', css_cours, name="css-cours"),
     path('javascript/', javascript_cours, name="javascript-cours"),
     path('jquery/', jquery_cours, name="jquery-cours"),
 
+    path('python_course_exercises/<int:pk>/', PythonCourseAllView.as_view(), name="python-course-exercises"),
+    path('python222/<int:pk>/', ExerciseView222.as_view(), name="python222"),
 ]
 
 

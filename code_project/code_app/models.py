@@ -29,12 +29,8 @@ class Languages(models.Model):
 
 class Exercises(models.Model):
     CHECK_METHODS = (
-        (
-            1, 'funkcja' # wynik kodu
-        ),
-        (
-            2, 'stdout' # wynik treści kodu
-    )
+        (1, 'funkcja'), # wynik kodu
+        (2, 'stdout') # wynik treści kodu
     )
 
     description = models.TextField()
@@ -63,6 +59,3 @@ class UserExercises(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     exercise = models.ForeignKey(Exercises, on_delete=models.CASCADE)
-
-# Exercises.objects.create(result=5, id_language=1, id_section=1)
-# e = Exercises.objects.get(pk=1)
