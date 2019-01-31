@@ -78,6 +78,7 @@ class ExerciseView(LoginRequiredMixin, View):
 class PythonCourseAllView(LoginRequiredMixin, View):
     def get(self, request, pk):
         language_sections = Languages.objects.filter(courses=1)
+        exer = Exercises.objects.filter(section__courses=1).order_by('id').first()
         return render(request, 'code_app/python_course_exercises.html', {"language_sections": language_sections})
 
 
@@ -100,16 +101,6 @@ class ExerciseView222(LoginRequiredMixin, View):
                 else:
                     messages.success(request, f'Super! Zadanie prawidłowo rozwiązane :)')
                     return render(request, 'code_app/python222.html', locals())
-        ###
-        # pattern = re.compile("o")
-        ###
-        # >> >
-        # >> > pattern.match("dog")  # No match as "o" is not at the start of "dog".
-        # >> > pattern.match("dog", 1)  # Match as "o" is the 2nd character of "dog".
-        # < re.Match
-        # object;
-        # span = (1, 2), match = 'o' >
-
         check_result_answer = Checker.check_by_function(answer, save_answer.exercise.check_result)
         if check_result_answer:
             save_answer.answer_is_correct = True
@@ -117,20 +108,7 @@ class ExerciseView222(LoginRequiredMixin, View):
             messages.success(request, f'zadanie prawidłowo rozwiązane')
         else:
             messages.success(request, f'zadanie nieprawidlowo rozwiazane')
-        return render(request, 'code_app/python_exercise.html', locals())
-
-
-
-
-
-
-
-
-
-
-
-
-
+        return render(request, 'code_app/python222.html', locals())
 
 
 def html_cours(request):
@@ -151,3 +129,6 @@ def javascript_cours(request):
 def jquery_cours(request):
     jq_sections = Languages.objects.filter(courses_id=5)
     return render(request, 'code_app/jquery_cours.html', {"jq_sections": jq_sections})
+
+def liczby(request):
+    return render(request, 'code_app/liczby.html')

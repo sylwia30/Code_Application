@@ -1,0 +1,62 @@
+{% extends 'code_app/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="content-section">
+            <h3>Liczby w Pythonie</h3><br>
+            <p>
+                Interpreter działa jak prosty kalkulator: można wpisać wyrażenie do niego, a on wypisze jego wartość.
+                Składnia wyrażenia jest prosta:<br> operator +, -, * i / działają jak w wielu innych językach programowania
+                (np. Pascal lub C); nawiasy można użyć do grupowania. Na przykład:<br>
+            </p>
+            <p class="text-colour">
+                >>> 2+2<br>
+                4<br>
+                >>> # To jest komentarz<br>
+                ... 2+2<br>
+                4<br>
+                >>> 2+2  # a to jest komentarz w tej samej linii co kod instrukcji<br>
+                4<br>
+                >>> (50-5*6)/4<br>
+                5<br>
+                >>> # Dzielenie całkowite zwraca liczbę zaokrągloną w dół<br>
+                ... 7/3<br>
+                2<br>
+                >>> 7/-3<br>
+                -3<br>
+            </p>
+            <p>
+                Znak równości ("=") jest używany do przypisania wartości do zmiennej. Przypisanie do zmiennej nie jest
+                wypisywane przez interpreter:<br>
+                >>> szerokosc = 20<br>
+                >>> wysokosc = 5*9<br>
+                >>> szerokosc * wysokosc<br>
+                900
+            </p>
+            <p>Wartość może być przypisana jednocześnie paru zmiennym:<br>
+                >>> x = y = z = 0  # Zero x, y i z<br>
+                >>> x<br>
+                0<br>
+                >>> y<br>
+                0<br>
+                >>> z<br>
+                0<br>
+            </p>
+            <p>
+                Python implementuje oczywiście arytmetykę zmiennoprzecinkową, a operatory z operandami typów mieszanych przekształcają operandy całkowite w zmiennoprzecinkowe:<br>
+                >>> 4 * 2.5 / 3.3<br>
+                3.0303030303<br>
+                >>> 7.0 / 2<br>
+                3.5<br>
+            </p>
+            <p>
+                Liczby zespolone są zawsze reprezentowane jako dwie zmiennoprzecinkowe liczby, odpowiednio część rzeczywista i urojona. Aby wydobyć je z liczby urojonej z, należy użyć z.real i z.imag.<br>
+                >>> a=1.5+0.5j<br>
+                >>> a.real<br>
+                1.5<br>
+                >>> a.imag<br>
+                0.5<br>
+            </p>
+            <a href="{% url 'python-cours' %}" class="btn-s btn btn-outline-info"><strong>Powrót...</strong></a><br>
+        </div>
+    </div>
+{% endblock content %}

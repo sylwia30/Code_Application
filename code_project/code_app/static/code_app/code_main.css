@@ -15,7 +15,7 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     position: relative;
 }
 
-#sylwia {
+#lesson {
     height:100%;
     width:50%;
     display:inline-block;
@@ -26,11 +26,6 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     padding: 1cm;
 }
 
-#lesson {
-    height:90%;
-    width:50%;
-    display:inline-block;
-}
 
 .btn-run {
     background: #66ff99;
@@ -52,9 +47,7 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     position: relative;
 }
 
-#background-all {
-    background: #404040;
-}
+
 /* disable tag matching */
 .ace_editor .ace_marker-layer .ace_bracket { display: none }
 
@@ -66,13 +59,56 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     position: fixed;
     top: 20vh;
     left: 30vw;
-    width: 40vw;
-    height: 20vh;
-    border: 1px solid black;
+    width: 30vw;
+    height: 5vh;
+    border: 1px solid white;
     z-index: 9999;
     background: gray;
-
+    padding: 30px;
 }
-.massage-view {
+
+
+.button-ok {
+    display: none;
     text-align: center;
 }
+
+
+/*lllllllllllllllllllllllllllllllllllllllllllll*/
+
+/* The alert message box */
+.alarm {
+  padding: 20px;
+  background-color: #ff9800; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-right: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 20px;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
+.communcat {
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
