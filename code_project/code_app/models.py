@@ -44,6 +44,9 @@ class Exercises(models.Model):
     def __str__(self):
         return f'{self.description}'
 
+    def save(self, *args, **kwargs):
+        super(Exercises, self).save(*args, **kwargs)
+
 
 class CheckSyntax(models.Model):
     name = models.CharField(max_length=64)

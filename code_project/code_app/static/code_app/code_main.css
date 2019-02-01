@@ -24,6 +24,7 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
     color: white;
     text-align: justify;
     padding: 1cm;
+    overflow: revert;
 }
 
 
@@ -115,3 +116,7 @@ html,body { margin:0; padding:0; height:100%; width:100%;}
 .line {
     text-decoration: none;
 }
+
+/*.zawijaj {*/
+    /*overflow: revert;*/
+/*}*/

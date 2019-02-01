@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Languages, Exercises, UserExercises, Courses
 from django.views import View
 from .checker import Checker
@@ -80,7 +80,6 @@ class PythonCourseAllView(LoginRequiredMixin, View):
         exer = Exercises.objects.filter(section__courses=1).order_by('id').first()
         return render(request, 'code_app/python_course_exercises.html', {"language_sections": language_sections})
 
-import string
 
 class ExerciseView222(LoginRequiredMixin, View):
     def get(self, request, pk):
@@ -96,8 +95,7 @@ class ExerciseView222(LoginRequiredMixin, View):
         for i in syntax:
             for j in i.check_syntax.all():
                 print(j.name)
-                # new_j.regexp = string.
-                pattern = re.compile(j.regexp)
+                # pattern = re.compile(j.regexp.replace('"', ''))
                 pattern = re.compile(r'\n*return.*')
                 print(pattern)
                 print(answer)
@@ -105,7 +103,7 @@ class ExerciseView222(LoginRequiredMixin, View):
                 print(x)
                 if pattern.search(answer) == None:
                     messages.error(request, j.error_message)
-                    return render(request, 'code_app/python222.html', locals())
+                    return redirect('python222', pk)
                 else:
                 #     messages.success(request, f'Super! Zadanie prawidłowo rozwiązane :)')
                 #     return render(request, 'code_app/python222.html', locals())
@@ -114,9 +112,10 @@ class ExerciseView222(LoginRequiredMixin, View):
                         save_answer.answer_is_correct = True
                         save_answer.save()
                         messages.success(request, f'Brawo! Zadanie prawidłowo rozwiązane')
+                        return redirect('python222', pk+1)
                     else:
                         messages.error(request, f'Niestety nie udało się, spróbuj jeszcze raz!')
-                    return render(request, 'code_app/python222.html', locals())
+                    return redirect('python222', pk)
 
 
 def html_cours(request):

@@ -33,26 +33,26 @@ if ret == 9:
 else:
     sys.exit(-1)
 '''
-
-import re
-text = """
-
-
-def aaa():
-444
-    aaa tt2returnaaa x*x
-    scnakc
-    
-    
-ASc
-"""
-
-pattern = re.compile(r'\n*return.*')
-matcher = pattern.search(text)
-if pattern.search(text) == None:
-    print("w funkcji nie ma 'return'")
-else:
-    print("Znaleziono return w kodzie")
+#
+# import re
+# text = """
+#
+#
+# def aaa():
+# 444
+#     aaa tt2returnaaa x*x
+#     scnakc
+#
+#
+# ASc
+# """
+#
+# pattern = re.compile(r'\n*return.*')
+# matcher = pattern.search(text)
+# if pattern.search(text) == None:
+#     print("w funkcji nie ma 'return'")
+# else:
+#     print("Znaleziono return w kodzie")
 
 
 
