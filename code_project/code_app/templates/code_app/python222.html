@@ -47,7 +47,8 @@
     </div>
         <form method="POST">
             <button type="submit" class="btn-run">Run</button>
-            <button type="button" class="btn-next">Następne zadanie</button>
+{#            <button type="button" class="btn-next"><a class="line" href="{% url 'python222' previous_exercise.pk  %}">Poprzednie zadanie</a></button>#}
+{#            <button type="button" class="btn-next"><a class="line" href="{% url 'python222' next_exercise.pk  %}">Następne zadanie</a></button>#}
             {% csrf_token %}
             <textarea id="answer" name="answer" style="display:none;"></textarea>
         </form>

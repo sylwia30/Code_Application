@@ -85,7 +85,10 @@ class PythonCourseAllView(LoginRequiredMixin, View):
 class ExerciseView222(LoginRequiredMixin, View):
     def get(self, request, pk):
         exercise = Exercises.objects.get(pk=pk)
-        return render(request, 'code_app/python222.html', {"exercise":exercise})
+        next_exercise = Exercises.objects.get(pk=exercise.pk +1)
+        return render(request, 'code_app/python222.html', {"exercise":exercise,
+                                                           "next_exercise": next_exercise,
+                                                           })
 
     def post(self, request, pk):
         answer = request.POST.get("answer")
@@ -94,7 +97,13 @@ class ExerciseView222(LoginRequiredMixin, View):
         for i in syntax:
             for j in i.check_syntax.all():
                 print(j.name)
-                pattern = re.compile(j.regexp)
+                # pattern = re.compile(j.regexp)
+                # pattern = re.compile(r'^[A-Za-z0-9 _\s]+[A-Za-z0-9\s]+[A-Za-z0-9 _\s]+return+[\sA-Za-z0-9 _\s]+[A-Za-z0-9\s]+[A-Za-z0-9 _\s]+$')
+                pattern = re.compile(r'^[.\n]+return+[.\n]')
+                print(pattern)
+                print(answer)
+                x= pattern.fullmatch(answer)
+                print(x)
                 if pattern.fullmatch(answer) == None:
                     messages.error(request, j.error_message)
                     return render(request, 'code_app/python222.html', locals())
@@ -105,9 +114,9 @@ class ExerciseView222(LoginRequiredMixin, View):
         if check_result_answer:
             save_answer.answer_is_correct = True
             save_answer.save()
-            messages.success(request, f'zadanie prawidłowo rozwiązane')
+            messages.success(request, f'Brawo! Zadanie prawidłowo rozwiązane')
         else:
-            messages.success(request, f'zadanie nieprawidlowo rozwiazane')
+            messages.error(request, f'Niestety nie udało się, spróbuj jeszcze raz!')
         return render(request, 'code_app/python222.html', locals())
 
 
