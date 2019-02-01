@@ -10,7 +10,6 @@ def base(request):
     return render(request, 'code_app/base.html')
 
 def start_code(request):
-
     return render(request, 'code_app/start_code.html')
 
 def courses(request):
@@ -81,6 +80,7 @@ class PythonCourseAllView(LoginRequiredMixin, View):
         exer = Exercises.objects.filter(section__courses=1).order_by('id').first()
         return render(request, 'code_app/python_course_exercises.html', {"language_sections": language_sections})
 
+import string
 
 class ExerciseView222(LoginRequiredMixin, View):
     def get(self, request, pk):
@@ -89,35 +89,34 @@ class ExerciseView222(LoginRequiredMixin, View):
         return render(request, 'code_app/python222.html', {"exercise":exercise,
                                                            "next_exercise": next_exercise,
                                                            })
-
     def post(self, request, pk):
         answer = request.POST.get("answer")
-        save_answer = UserExercises.objects.create(student_id=request.user.pk, exercise_id=1, answer=answer)
+        save_answer = UserExercises.objects.create(student_id=request.user.pk, exercise_id=pk, answer=answer)
         syntax = Exercises.objects.filter(id=pk)
         for i in syntax:
             for j in i.check_syntax.all():
                 print(j.name)
-                # pattern = re.compile(j.regexp)
-                # pattern = re.compile(r'^[A-Za-z0-9 _\s]+[A-Za-z0-9\s]+[A-Za-z0-9 _\s]+return+[\sA-Za-z0-9 _\s]+[A-Za-z0-9\s]+[A-Za-z0-9 _\s]+$')
-                pattern = re.compile(r'^[.\n]+return+[.\n]')
+                # new_j.regexp = string.
+                pattern = re.compile(j.regexp)
+                pattern = re.compile(r'\n*return.*')
                 print(pattern)
                 print(answer)
-                x= pattern.fullmatch(answer)
+                x= pattern.search(answer)
                 print(x)
-                if pattern.fullmatch(answer) == None:
+                if pattern.search(answer) == None:
                     messages.error(request, j.error_message)
                     return render(request, 'code_app/python222.html', locals())
                 else:
-                    messages.success(request, f'Super! Zadanie prawidłowo rozwiązane :)')
+                #     messages.success(request, f'Super! Zadanie prawidłowo rozwiązane :)')
+                #     return render(request, 'code_app/python222.html', locals())
+                    check_result_answer = Checker.check_by_function(answer, save_answer.exercise.check_result)
+                    if check_result_answer:
+                        save_answer.answer_is_correct = True
+                        save_answer.save()
+                        messages.success(request, f'Brawo! Zadanie prawidłowo rozwiązane')
+                    else:
+                        messages.error(request, f'Niestety nie udało się, spróbuj jeszcze raz!')
                     return render(request, 'code_app/python222.html', locals())
-        check_result_answer = Checker.check_by_function(answer, save_answer.exercise.check_result)
-        if check_result_answer:
-            save_answer.answer_is_correct = True
-            save_answer.save()
-            messages.success(request, f'Brawo! Zadanie prawidłowo rozwiązane')
-        else:
-            messages.error(request, f'Niestety nie udało się, spróbuj jeszcze raz!')
-        return render(request, 'code_app/python222.html', locals())
 
 
 def html_cours(request):
