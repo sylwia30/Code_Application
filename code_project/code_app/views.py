@@ -81,13 +81,35 @@ class PythonCourseAllView(LoginRequiredMixin, View):
         return render(request, 'code_app/python_course_exercises.html', {"language_sections": language_sections})
 
 
+
 class ExerciseView222(LoginRequiredMixin, View):
+
     def get(self, request, pk):
         exercise = Exercises.objects.get(pk=pk)
-        next_exercise = Exercises.objects.get(pk=exercise.pk +1)
+        # next_exercise = Exercises.objects.get(pk=exercise.pk +1)
+        next_exercise = pk + 1
         return render(request, 'code_app/python222.html', {"exercise":exercise,
                                                            "next_exercise": next_exercise,
                                                            })
+
+    # def get(self, request, pk):
+    #     try:
+    #         exercise = Exercises.objects.get(pk=pk)
+    #         # next_exercise = Exercises.objects.get(pk=exercise.pk +1)
+    #         next_exercise = pk + 1
+    #         return render(request, 'code_app/python222.html', {"exercise":exercise,
+    #                                                        "next_exercise": next_exercise,
+    #                                                        })
+    #     except
+    #
+    # try:
+    #     print(x)
+    # except NameError:
+    #     print("Variable x is not defined")
+    # except:
+    #     print("Something else went wrong")
+
+
     def post(self, request, pk):
         answer = request.POST.get("answer")
         save_answer = UserExercises.objects.create(student_id=request.user.pk, exercise_id=pk, answer=answer)
@@ -96,7 +118,9 @@ class ExerciseView222(LoginRequiredMixin, View):
             for j in i.check_syntax.all():
                 print(j.name)
                 # pattern = re.compile(j.regexp.replace('"', ''))
-                pattern = re.compile(r'\n*return.*')
+                # pattern = re.compile(r'\n*return.*')
+                pattern = re.sub(r'\\(.)', r'\1', j.regexp)
+                pattern = re.compile(pattern)
                 print(pattern)
                 print(answer)
                 x= pattern.search(answer)
@@ -104,18 +128,17 @@ class ExerciseView222(LoginRequiredMixin, View):
                 if pattern.search(answer) == None:
                     messages.error(request, j.error_message)
                     return redirect('python222', pk)
-                else:
                 #     messages.success(request, f'Super! Zadanie prawidłowo rozwiązane :)')
                 #     return render(request, 'code_app/python222.html', locals())
-                    check_result_answer = Checker.check_by_function(answer, save_answer.exercise.check_result)
-                    if check_result_answer:
-                        save_answer.answer_is_correct = True
-                        save_answer.save()
-                        messages.success(request, f'Brawo! Zadanie prawidłowo rozwiązane')
-                        return redirect('python222', pk+1)
-                    else:
-                        messages.error(request, f'Niestety nie udało się, spróbuj jeszcze raz!')
-                    return redirect('python222', pk)
+            check_result_answer = Checker.check_by_function(answer, save_answer.exercise.check_result)
+            if check_result_answer:
+                save_answer.answer_is_correct = True
+                save_answer.save()
+                messages.success(request, f'Brawo! Zadanie prawidłowo rozwiązane')
+                return redirect('python222', pk+1)
+            else:
+                messages.error(request, f'Niestety nie udało się, spróbuj jeszcze raz!')
+            return redirect('python222', pk)
 
 
 def html_cours(request):
