@@ -100,8 +100,10 @@ class ExerciseView222(LoginRequiredMixin, View):
     #         return render(request, 'code_app/python222.html', {"exercise":exercise,
     #                                                        "next_exercise": next_exercise,
     #                                                        })
-    #     except
-    #
+    #     except:
+    #         messages.error(request, f'Koniec zadań')
+    #         return redirect('python222', pk)
+
     # try:
     #     print(x)
     # except NameError:
