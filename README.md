@@ -2,7 +2,6 @@
 Website designed for learning Python programming on-line.
 
 <b>Functionality</b>
-
 Applied functionalities and tools on the website: 
 - create, edit and delete a user profile 
 - add and change a user profile photo
@@ -20,13 +19,11 @@ Applied functionalities and tools on the website:
 - Bootstrap
 - Code Editor-Ace
 
-<b>Future</b>
-
-In the future, I would also like to implement an on-line platform for the following languages: JavaScript, JQuery, HTML and CSS. At a given moment the site is only prepared for this eventuality.
-
 <b>Demo</b>
 
 
+<b>Future</b>
+In the future, I would also like to implement an on-line platform for the following languages: JavaScript, JQuery, HTML and CSS. At a given moment the site is only prepared for this eventuality.
 
 <b>Warning!</b>
 Exercises and science materials are demonstrative
