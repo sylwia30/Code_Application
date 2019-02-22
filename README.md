@@ -20,7 +20,8 @@ Applied functionalities and tools on the website:
 - Bootstrap
 - Code Editor-Ace
 
-## Demo
+## Screenshots
+
 
 ## Future
 
