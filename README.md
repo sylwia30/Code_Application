@@ -1,7 +1,7 @@
 # Code_Application 
 Website designed for learning Python programming on-line.
 
-<b>Functionality</b>
+## Functionality
 
 Applied functionalities and tools on the website: 
 - create, edit and delete a user profile 
