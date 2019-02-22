@@ -12,7 +12,7 @@ Applied functionalities and tools on the website:
 - a section with didactic materials for learning programming
 - Python Code Editor - section with Python exercises for solving on the online platform
 
-<b>Technologies and tools</b>
+##Technologies and tools
 - Python
 - Django
 - HTML
@@ -20,13 +20,12 @@ Applied functionalities and tools on the website:
 - Bootstrap
 - Code Editor-Ace
 
-<b>Demo</b>
+## Demo
 
-<b>Future</b>
+## Future
 
 In the future, I would also like to implement an on-line platform for the following languages: JavaScript, JQuery, HTML and CSS. At a given moment the site is only prepared for this eventuality.
 
-<b>Warning!</b>
-
+## Warning!
 Exercises and science materials are demonstrative
 
