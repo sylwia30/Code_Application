@@ -12,9 +12,7 @@ Applied functionalities and tools on the website:
 - a section with didactic materials for learning programming
 - Python Code Editor - section with Python exercises for solving on the online platform
 
-<b>Technologies</b>
-
-The technologies and tools used are: 
+<b>Technologies and tools</b>
 - Python
 - Django
 - HTML
