@@ -14,7 +14,13 @@ Applied functionalities and tools on the website:
 
 <b>Technologies</b>
 
-The technologies and tools used are: Python, Django, HTML, CSS, Bootstrap, Code Editor-Ace
+The technologies and tools used are: 
+- Python
+- Django
+- HTML
+- CSS
+- Bootstrap
+- Code Editor-Ace
 
 <b>Future</b>
 
