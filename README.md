@@ -21,7 +21,7 @@ Applied functionalities on the website:
 - Code Editor-Ace
 
 ## Screenshots
-
+![Algorithm schema](./Screenshot from 2019-02-22 22-44-02.png)
 
 ## Future
 
