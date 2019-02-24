@@ -22,6 +22,8 @@ Applied functionalities on the website:
 
 ## Screenshots
 ![Algorithm schema](./photocv.JPG)
+![Algorithm schema](./prtscreeny_projektu.docx)
+
 
 ## Future
 
