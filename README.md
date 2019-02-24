@@ -21,9 +21,7 @@ Applied functionalities on the website:
 - Code Editor-Ace
 
 ## Screenshots
-![Algorithm schema](./photocv.JPG)
-![Algorithm schema](./prtscreeny_projektu.docx)
-![Algorithm schema](./test.jpg)
+![Algorithm schema](./screenshots.jpg)
 
 
 ## Future
