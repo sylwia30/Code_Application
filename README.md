@@ -3,7 +3,7 @@ Website designed for learning Python programming on-line.
 
 ## Functionality
 
-Applied functionalities and tools on the website: 
+Applied functionalities on the website: 
 - create, edit and delete a user profile 
 - add and change a user profile photo
 - login and logout
