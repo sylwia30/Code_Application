@@ -28,5 +28,5 @@ Applied functionalities on the website:
 In the future, I would like to implement an on-line platform for the following languages: JavaScript, JQuery, HTML and CSS. At a given moment the site is only prepared for this eventuality.
 
 ## Warning!
-Exercises and science materials are demonstrative
+Exercises and science materials are demonstrative.
 
