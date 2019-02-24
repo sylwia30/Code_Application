@@ -4,16 +4,8 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.2/ace.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'code_app/code_main.css' %}">
-{##}
-{#      <!-- Required meta tags -->#}
-{#  <meta charset="utf-8">#}
-{#  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
-{##}
-{#  <!-- Bootstrap CSS -->#}
-{#  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">#}
-  <title>croCode Line</title>
+    <title>croCode Line</title>
 </head>
-
 <body>
     {% if messages  %}
         <div class="box-alert col-md-8">
@@ -22,9 +14,6 @@
                     <span class="closebtn" onclick="this.parentElement.parentElement.style.display='none';">&times;</span>
                         <p class="communcat">{{ message }}</p>
                 </div>
-{#              <div class="alert alert-{{ message.tags }}">#}
-{#                {{ message }}#}
-{#              </div>#}
             {% endfor %}
         </div>
     {% endif %}
@@ -52,15 +41,8 @@
             {% csrf_token %}
             <textarea id="answer" name="answer" style="display:none;"></textarea>
         </form>
-     <iframe id='iframe' frameBorder="0" style="display:none;">{{ answer }}
+        <iframe id='iframe' frameBorder="0" style="display:none;">{{ answer }}
         </iframe>
-
-
-<script src="{% static 'code_app/python_editor_box.js' %}"></script>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-{#<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>#}
-{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>#}
-{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>#}
+    <script src="{% static 'code_app/python_editor_box.js' %}"></script>
 </body>
 </html>

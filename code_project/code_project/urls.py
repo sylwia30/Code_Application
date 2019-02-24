@@ -30,8 +30,7 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('profile/', ProfileView.as_view(), name='profile'),
     path('profile/edit/', profile, name='profile-edit'),
-    path('profile/<int:pk>/delete/', UserDeleteForm.as_view(template_name='users/user_confirm_delete.html'),
-         name='user-delete'),
+    path('profile/<int:pk>/delete/', UserDeleteForm.as_view(template_name='users/user_confirm_delete.html'), name='user-delete'),
     path('', base, name='base'),
     path('start_code/', start_code, name="start-code"),
     path('courses/', courses, name="courses"),
@@ -43,7 +42,6 @@ urlpatterns = [
     path('css/', css_cours, name="css-cours"),
     path('javascript/', javascript_cours, name="javascript-cours"),
     path('jquery/', jquery_cours, name="jquery-cours"),
-
     path('python_course_exercises/<int:pk>/', PythonCourseAllView.as_view(), name="python-course-exercises"),
     path('python222/<int:pk>/', ExerciseView222.as_view(), name="python222"),
     path('liczby/', liczby, name='liczby'),

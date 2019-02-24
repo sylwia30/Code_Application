@@ -95,24 +95,6 @@ list-style-type: none;
 
 }
 
-/*.fixed-bottom {*/
-  /*position: sticky;*/
-  /*bottom: 0;*/
-/*}*/
-
-/*#editor {*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-    /*left: 20%;*/
-/*}*/
-
-/*#editor {*/
-        /*padding: 20px; margin: 20px;*/
-        /*width: 80%; height: 80%;*/
-/*}*/
-
 .background-boxes {
   background: #eff1f3;
 }

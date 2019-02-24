@@ -13,7 +13,6 @@ class Courses(models.Model):
 
 
 class Languages(models.Model):
-    '''lista rozdzialow'''
     nr_section = models.IntegerField(unique=True)
     section = models.CharField(max_length=200)
     date_add_language = models.DateTimeField(auto_now_add=True)
@@ -36,7 +35,7 @@ class Exercises(models.Model):
     description = models.TextField()
     date_add_exercise = models.DateTimeField(auto_now_add=True)
     section = models.ForeignKey(Languages, on_delete=models.CASCADE, related_name='section_id')
-    # # metody sprawdzania wyniku
+    # metody sprawdzania wyniku
     check_method = models.IntegerField(default=1, choices=CHECK_METHODS)
     check_result = models.TextField(default='')
     check_syntax = models.ManyToManyField("CheckSyntax")

@@ -52,7 +52,7 @@
                       </ul>
                       <strong><a class="nav-item nav-link" href="{% url 'chat' %}">Czat</a></strong>
                       <strong><a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}</a></strong>
-                      <strong><a class="nav-item nav-link" href="{% url 'logout' %}">Wyjoguj</a></strong>
+                      <strong><a class="nav-item nav-link" href="{% url 'logout' %}">Wyloguj</a></strong>
                   {% else %}
                         <ul>
                             <li class="nav-item dropdown">
@@ -110,66 +110,17 @@
                       <p></p>
                       <img class="img-fluid" src="media/profile_pics/cro_code_line.jpg" title="Photo corCode_Line" alt="Crocodile"/>
                       <p></p>
-        {#                <h6 class="text-center">#}
-        {#                    Program nauczania zawiera wszystkie dostępne biblioteki standardowe Python.#}
-        {#                    Na naszym portalu możesz utrwalać swoją wiedzę, rozwiązując zadania na ogólnodostępnej#}
-        {#                    platformie wymieniając się doświadczniem z innymi pasjonatami programowania na czacie.#}
-        {#                </h6>#}
-                        <h6>
-                            <a class="nav-item nav-link btn-outline-info text-center" href="{% url 'start-code' %}"><strong>Sprawdź program nauczania i wybierz najbardziej odpowiednią ścieżkę dla siebie...</strong></a>
-                        </h6>
-        {#                <h6>W ramach kursu poznasz rownież inne techniki programowania, w tym:#}
-        {#                  <ul>#}
-        {#                    <li>Python</li>#}
-        {#                    <li>HTML5</li>#}
-        {#                    <li>CSS</li>#}
-        {#                    <li>Java Script</li>#}
-        {#                    <li>JQuery</li>#}
-        {#                  </ul>#}
-        {#                </h6>#}
+                          <h6>
+                              <a class="nav-item nav-link btn-outline-info text-center" href="{% url 'start-code' %}"><strong>Sprawdź program nauczania i wybierz najbardziej odpowiednią ścieżkę dla siebie...</strong></a>
+                          </h6>
                   </div>
               </div>
-        {% endblock %}
-
-{#        <div class="col-md-4">#}
-{#          <div class="content-section">#}
-{#            <h3>Our Sidebar</h3>#}
-{#            <p class='text-muted'>You can put any information here you'd like.#}
-{#              <ul class="list-group">#}
-{#                <li class="list-group-item list-group-item-light">Latest Posts</li>#}
-{#                <li class="list-group-item list-group-item-light">Announcements</li>#}
-{#                <li class="list-group-item list-group-item-light">Calendars</li>#}
-{#                <li class="list-group-item list-group-item-light">etc</li>#}
-{#              </ul>#}
-{#            </p>#}
-{#          </div>#}
-{#        </div>#}
-    </main>
-{#    <footer>#}
-{#        <div class=" footer bg-steel">#}
-{##}
-{#            <p class="site-header">CHCESZ OTRZYMAĆ SZCZEGÓŁOWY PROGRAM NAUCZANIA?</p>#}
-{#            <nav>#}
-{#            <small class="mr-5">© 2019 croCode Line</small>#}
-{#            <a class="content-sectionmr-3 " href="#">Regulamin</a>#}
-{#            <a class="mr-3" href="#">Polityka prywatności</a>#}
-{#            </nav>#}
-{#              <a class="btn-outline-info" href="#">Python</a> |#}
-{#              <a class="btn-outline-info" href="#">HTML</a> |#}
-{#              <a class="btn-outline-info" href="#">CSS</a> |#}
-{#              <a class="btn-outline-info" href="#">JavaScript</a> |#}
-{#              <a class="btn-outline-info" href="#">jQuery</a>#}
-{#        </div>#}
-{#    </footer>#}
-
-{#       <footer class="footer bg-steel fixed-bottom">#}
-{#              <span class="text-muted">CHCESZ OTRZYMAĆ SZCZEGÓŁOWY PROGRAM NAUCZANIA? NAPISZ DO NAS!</span>#}
-{#       </footer>#}
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+          {% endblock %}
+      </main>
+          <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
