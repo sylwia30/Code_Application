@@ -14,7 +14,7 @@ import os
 import django_heroku
 
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...) szuka manage.py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -139,6 +139,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'base' # po zalogowaniu przekierowuje nas do strony głównej base
 
 LOGIN_URL = 'login' # jak użytkownik nie jest zalogowany a powinien aby widzieć daną stronę to przekierowuje go do strony logowania
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) # zmienna szukająca settings.py
 
