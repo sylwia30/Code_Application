@@ -140,10 +140,10 @@ LOGIN_REDIRECT_URL = 'base' # po zalogowaniu przekierowuje nas do strony główn
 
 LOGIN_URL = 'login' # jak użytkownik nie jest zalogowany a powinien aby widzieć daną stronę to przekierowuje go do strony logowania
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'code_app/static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) # zmienna szukająca settings.py
 
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'code_app/static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 
 django_heroku.settings(locals())
