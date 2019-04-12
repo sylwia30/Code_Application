@@ -119,5 +119,6 @@ def jquery_cours(request):
     jq_sections = Languages.objects.filter(courses_id=5)
     return render(request, 'code_app/jquery_cours.html', {"jq_sections": jq_sections})
 
-def liczby(request):
-    return render(request, 'code_app/liczby.html')
+class liczby(LoginRequiredMixin):
+    def liczby_test(request):
+        return render(request, 'code_app/liczby.html')
