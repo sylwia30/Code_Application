@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ SECRET_KEY = 'fe++%ce+haplvz+e-u4!$!-p5a#=@76(fx%i9i%r-hhd&6wg$^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -136,6 +138,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'base' # po zalogowaniu przekierowuje nas do strony głównej base
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 LOGIN_URL = 'login' # jak użytkownik nie jest zalogowany a powinien aby widzieć daną stronę to przekierowuje go do strony logowania
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) # zmienna szukająca settings.py
+
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'code_app/static')
+
+django_heroku.settings(locals())
